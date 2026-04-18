@@ -1,0 +1,65 @@
+{
+  "common": {
+    "email": "Email",
+    "password": "Password",
+    "emailPlaceholder": "you@example.com",
+    "passwordPlaceholder": "••••••••"
+  },
+  "validation": {
+    "emailRequired": "Email is required",
+    "emailInvalid": "Enter a valid email",
+    "passwordRequired": "Password is required",
+    "passwordMin6": "At least 6 characters",
+    "passwordMin8": "At least 8 characters",
+    "nameRequired": "Name is required",
+    "confirmPasswordRequired": "Please confirm your password",
+    "passwordsMismatch": "Passwords do not match"
+  },
+  "login": {
+    "title": "Welcome back",
+    "subtitle": "Sign in to continue",
+    "forgotPassword": "Forgot password?",
+    "signIn": "Sign In",
+    "noAccount": "Don't have an account?",
+    "signUp": "Sign Up",
+    "error": "Login failed. Please try again.",
+    "orContinueWith": "or continue with",
+    "googleButton": "Continue with Google",
+    "googleError": "Google sign-in failed. Please try again."
+  },
+  "register": {
+    "title": "Create account",
+    "subtitle": "Fill in the details to get started",
+    "fullName": "Full Name",
+    "fullNamePlaceholder": "John Doe",
+    "confirmPassword": "Confirm Password",
+    "createAccount": "Create Account",
+    "hasAccount": "Already have an account?",
+    "signIn": "Sign In",
+    "error": "Registration failed. Please try again.",
+    "orContinueWith": "or continue with",
+    "googleButton": "Continue with Google",
+    "googleError": "Google sign-up failed. Please try again."
+  },
+  "forgotPassword": {
+    "title": "Forgot password?",
+    "subtitle": "Enter your email and we'll send you a reset link",
+    "sendLink": "Send Reset Link",
+    "backToSignIn": "Back to Sign In",
+    "success": "Check your email for a reset link.",
+    "error": "Something went wrong. Please try again."
+  },
+  "resetPassword": {
+    "title": "Reset password",
+    "subtitle": "Enter your new password below",
+    "newPassword": "New Password",
+    "confirmNewPassword": "Confirm New Password",
+    "resetPassword": "Reset Password",
+    "backToSignIn": "Back to Sign In",
+    "success": "Password reset successfully!",
+    "error": "Failed to reset password. Please try again."
+  },
+  "home": {
+    "welcome": "Welcome! You are logged in."
+  }
+}

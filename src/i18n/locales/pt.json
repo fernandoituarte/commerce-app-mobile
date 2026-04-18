@@ -1,0 +1,65 @@
+{
+  "common": {
+    "email": "E-mail",
+    "password": "Senha",
+    "emailPlaceholder": "voce@exemplo.com",
+    "passwordPlaceholder": "••••••••"
+  },
+  "validation": {
+    "emailRequired": "O e-mail é obrigatório",
+    "emailInvalid": "Insira um e-mail válido",
+    "passwordRequired": "A senha é obrigatória",
+    "passwordMin6": "Mínimo de 6 caracteres",
+    "passwordMin8": "Mínimo de 8 caracteres",
+    "nameRequired": "O nome é obrigatório",
+    "confirmPasswordRequired": "Confirme sua senha",
+    "passwordsMismatch": "As senhas não coincidem"
+  },
+  "login": {
+    "title": "Bem-vindo de volta",
+    "subtitle": "Faça login para continuar",
+    "forgotPassword": "Esqueceu a senha?",
+    "signIn": "Entrar",
+    "noAccount": "Não tem uma conta?",
+    "signUp": "Cadastrar-se",
+    "error": "Falha no login. Tente novamente.",
+    "orContinueWith": "ou continuar com",
+    "googleButton": "Continuar com Google",
+    "googleError": "Falha no login com Google. Tente novamente."
+  },
+  "register": {
+    "title": "Criar conta",
+    "subtitle": "Preencha os dados para começar",
+    "fullName": "Nome Completo",
+    "fullNamePlaceholder": "João Silva",
+    "confirmPassword": "Confirmar Senha",
+    "createAccount": "Criar Conta",
+    "hasAccount": "Já tem uma conta?",
+    "signIn": "Entrar",
+    "error": "Falha no cadastro. Tente novamente.",
+    "orContinueWith": "ou continuar com",
+    "googleButton": "Continuar com Google",
+    "googleError": "Falha no cadastro com Google. Tente novamente."
+  },
+  "forgotPassword": {
+    "title": "Esqueceu a senha?",
+    "subtitle": "Insira seu e-mail e enviaremos um link de recuperação",
+    "sendLink": "Enviar Link",
+    "backToSignIn": "Voltar para Login",
+    "success": "Verifique seu e-mail para o link de recuperação.",
+    "error": "Algo deu errado. Tente novamente."
+  },
+  "resetPassword": {
+    "title": "Redefinir senha",
+    "subtitle": "Insira sua nova senha abaixo",
+    "newPassword": "Nova Senha",
+    "confirmNewPassword": "Confirmar Nova Senha",
+    "resetPassword": "Redefinir Senha",
+    "backToSignIn": "Voltar para Login",
+    "success": "Senha redefinida com sucesso!",
+    "error": "Falha ao redefinir a senha. Tente novamente."
+  },
+  "home": {
+    "welcome": "Bem-vindo! Você está conectado."
+  }
+}

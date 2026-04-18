@@ -1,0 +1,65 @@
+{
+  "common": {
+    "email": "E-mail",
+    "password": "Mot de passe",
+    "emailPlaceholder": "vous@exemple.com",
+    "passwordPlaceholder": "••••••••"
+  },
+  "validation": {
+    "emailRequired": "L'e-mail est requis",
+    "emailInvalid": "Entrez un e-mail valide",
+    "passwordRequired": "Le mot de passe est requis",
+    "passwordMin6": "Au moins 6 caractères",
+    "passwordMin8": "Au moins 8 caractères",
+    "nameRequired": "Le nom est requis",
+    "confirmPasswordRequired": "Veuillez confirmer votre mot de passe",
+    "passwordsMismatch": "Les mots de passe ne correspondent pas"
+  },
+  "login": {
+    "title": "Bon retour",
+    "subtitle": "Connectez-vous pour continuer",
+    "forgotPassword": "Mot de passe oublié ?",
+    "signIn": "Se Connecter",
+    "noAccount": "Vous n'avez pas de compte ?",
+    "signUp": "S'inscrire",
+    "error": "Échec de la connexion. Veuillez réessayer.",
+    "orContinueWith": "ou continuer avec",
+    "googleButton": "Continuer avec Google",
+    "googleError": "Échec de la connexion Google. Veuillez réessayer."
+  },
+  "register": {
+    "title": "Créer un compte",
+    "subtitle": "Remplissez les détails pour commencer",
+    "fullName": "Nom Complet",
+    "fullNamePlaceholder": "Jean Dupont",
+    "confirmPassword": "Confirmer le Mot de Passe",
+    "createAccount": "Créer un Compte",
+    "hasAccount": "Vous avez déjà un compte ?",
+    "signIn": "Se Connecter",
+    "error": "Échec de l'inscription. Veuillez réessayer.",
+    "orContinueWith": "ou continuer avec",
+    "googleButton": "Continuer avec Google",
+    "googleError": "Échec de l'inscription Google. Veuillez réessayer."
+  },
+  "forgotPassword": {
+    "title": "Mot de passe oublié ?",
+    "subtitle": "Entrez votre e-mail et nous vous enverrons un lien de réinitialisation",
+    "sendLink": "Envoyer le Lien",
+    "backToSignIn": "Retour à la Connexion",
+    "success": "Vérifiez votre e-mail pour le lien de réinitialisation.",
+    "error": "Une erreur est survenue. Veuillez réessayer."
+  },
+  "resetPassword": {
+    "title": "Réinitialiser le mot de passe",
+    "subtitle": "Entrez votre nouveau mot de passe ci-dessous",
+    "newPassword": "Nouveau Mot de Passe",
+    "confirmNewPassword": "Confirmer le Nouveau Mot de Passe",
+    "resetPassword": "Réinitialiser",
+    "backToSignIn": "Retour à la Connexion",
+    "success": "Mot de passe réinitialisé avec succès !",
+    "error": "Échec de la réinitialisation. Veuillez réessayer."
+  },
+  "home": {
+    "welcome": "Bienvenue ! Vous êtes connecté."
+  }
+}

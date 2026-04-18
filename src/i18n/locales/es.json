@@ -1,0 +1,65 @@
+{
+  "common": {
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "emailPlaceholder": "tu@ejemplo.com",
+    "passwordPlaceholder": "••••••••"
+  },
+  "validation": {
+    "emailRequired": "El correo es obligatorio",
+    "emailInvalid": "Ingresa un correo válido",
+    "passwordRequired": "La contraseña es obligatoria",
+    "passwordMin6": "Mínimo 6 caracteres",
+    "passwordMin8": "Mínimo 8 caracteres",
+    "nameRequired": "El nombre es obligatorio",
+    "confirmPasswordRequired": "Confirma tu contraseña",
+    "passwordsMismatch": "Las contraseñas no coinciden"
+  },
+  "login": {
+    "title": "Bienvenido de nuevo",
+    "subtitle": "Inicia sesión para continuar",
+    "forgotPassword": "¿Olvidaste tu contraseña?",
+    "signIn": "Iniciar Sesión",
+    "noAccount": "¿No tienes una cuenta?",
+    "signUp": "Registrarse",
+    "error": "Error al iniciar sesión. Intenta de nuevo.",
+    "orContinueWith": "o continuar con",
+    "googleButton": "Continuar con Google",
+    "googleError": "Error al iniciar sesión con Google. Intenta de nuevo."
+  },
+  "register": {
+    "title": "Crear cuenta",
+    "subtitle": "Completa los datos para comenzar",
+    "fullName": "Nombre Completo",
+    "fullNamePlaceholder": "Juan Pérez",
+    "confirmPassword": "Confirmar Contraseña",
+    "createAccount": "Crear Cuenta",
+    "hasAccount": "¿Ya tienes una cuenta?",
+    "signIn": "Iniciar Sesión",
+    "error": "Error al registrarse. Intenta de nuevo.",
+    "orContinueWith": "o continuar con",
+    "googleButton": "Continuar con Google",
+    "googleError": "Error al registrarse con Google. Intenta de nuevo."
+  },
+  "forgotPassword": {
+    "title": "¿Olvidaste tu contraseña?",
+    "subtitle": "Ingresa tu correo y te enviaremos un enlace de recuperación",
+    "sendLink": "Enviar Enlace",
+    "backToSignIn": "Volver a Iniciar Sesión",
+    "success": "Revisa tu correo para el enlace de recuperación.",
+    "error": "Algo salió mal. Intenta de nuevo."
+  },
+  "resetPassword": {
+    "title": "Restablecer contraseña",
+    "subtitle": "Ingresa tu nueva contraseña",
+    "newPassword": "Nueva Contraseña",
+    "confirmNewPassword": "Confirmar Nueva Contraseña",
+    "resetPassword": "Restablecer Contraseña",
+    "backToSignIn": "Volver a Iniciar Sesión",
+    "success": "¡Contraseña restablecida exitosamente!",
+    "error": "Error al restablecer la contraseña. Intenta de nuevo."
+  },
+  "home": {
+    "welcome": "¡Bienvenido! Has iniciado sesión."
+  }
+}
