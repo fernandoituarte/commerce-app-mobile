@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { View, Text, KeyboardAvoidingView, Platform, ScrollView, StyleSheet } from "react-native";
 import { useForm, Controller } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
 import { useRouter } from "expo-router";
 import { useTranslation } from "react-i18next";
 import { useForgotPassword } from "../hooks/useAuth";
@@ -13,16 +15,33 @@ export function ForgotPasswordScreen() {
   const router = useRouter();
   const forgotMutation = useForgotPassword();
 
+  const schema = useMemo(
+    () =>
+      z.object({
+        email: z
+          .string()
+          .min(1, t("validation.emailRequired"))
+          .email(t("validation.emailInvalid")),
+      }),
+    [t],
+  );
+
   const {
     control,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm<ForgotPasswordRequest>({
+    resolver: zodResolver(schema),
     defaultValues: { email: "" },
+    mode: "onChange",
   });
 
   const onSubmit = (data: ForgotPasswordRequest) => {
-    forgotMutation.mutate(data);
+    forgotMutation.mutate(data, {
+      onSuccess: () => {
+        router.push({ pathname: "/reset-password", params: { email: data.email } });
+      },
+    });
   };
 
   return (
@@ -46,13 +65,6 @@ export function ForgotPasswordScreen() {
         <Controller
           control={control}
           name="email"
-          rules={{
-            required: t("validation.emailRequired"),
-            pattern: {
-              value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-              message: t("validation.emailInvalid"),
-            },
-          }}
           render={({ field: { onChange, onBlur, value } }) => (
             <Input
               label={t("common.email")}
@@ -67,18 +79,10 @@ export function ForgotPasswordScreen() {
           )}
         />
 
-        {/* ── Success Message ────────────────────────── */}
-        {forgotMutation.isSuccess && (
-          <Text style={styles.successText}>
-            {forgotMutation.data?.message ?? t("forgotPassword.success")}
-          </Text>
-        )}
-
         {/* ── Error Message ──────────────────────────── */}
         {forgotMutation.isError && (
           <Text style={styles.errorText}>
-            {(forgotMutation.error as { message?: string })?.message ??
-              t("forgotPassword.error")}
+            {forgotMutation.error?.message ?? t("forgotPassword.error")}
           </Text>
         )}
 
@@ -86,6 +90,7 @@ export function ForgotPasswordScreen() {
         <Button
           title={t("forgotPassword.sendLink")}
           loading={forgotMutation.isPending}
+          disabled={!isValid || forgotMutation.isPending}
           onPress={handleSubmit(onSubmit)}
         />
 
@@ -124,12 +129,6 @@ const styles = StyleSheet.create({
     marginTop: 8,
     fontSize: 16,
     color: "#64748b",
-  },
-  successText: {
-    marginBottom: 16,
-    textAlign: "center",
-    fontSize: 14,
-    color: colors.success,
   },
   errorText: {
     marginBottom: 16,

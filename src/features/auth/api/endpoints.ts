@@ -9,12 +9,11 @@ export const AUTH_ENDPOINTS = {
   REFRESH_TOKEN: "/saas/users/refresh",
   FORGOT_PASSWORD: "/saas/users/forgot-password",
   RESET_PASSWORD: "/saas/users/reset-password",
+  VERIFY_EMAIL: "/saas/users/verify-email",
+  RESEND_VERIFICATION: "/saas/users/resend-verification",
+
+  RESTORE_ACCOUNT: "/saas/users/me/restore",
 
   //oauth
   OAUTH_GOOGLE: "/saas/users/oauth/google",
-  
-  // ME: "/saas/users/me",
-  // DEACTIVATE_ACCOUNT: "/saas/users/me/deactivate",
-  // RESTORE_ACCOUNT: "/saas/users/me/restore",
-  // CHANGE_PASSWORD: "/saas/users/me/change-password",
 } as const;

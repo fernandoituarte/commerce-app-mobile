@@ -1,9 +1,205 @@
 {
+  "pos": {
+    "topBar": {
+      "account": "Cuenta",
+      "org": "Organización"
+    },
+    "nav": {
+      "orders": "Pedidos",
+      "order": "Pedido",
+      "products": "Productos"
+    },
+    "orders": {
+      "title": "Pedidos",
+      "newOrder": "Nuevo",
+      "empty": "Sin pedidos activos",
+      "error": "No se pudieron cargar los pedidos",
+      "retry": "Reintentar",
+      "new": {
+        "title": "Nuevo pedido",
+        "customerName": "Cliente / Mesa",
+        "customerNamePlaceholder": "ej. Mesa 4, Juan…",
+        "cancel": "Cancelar",
+        "confirm": "Crear pedido"
+      },
+      "filter": {
+        "all": "Todo",
+        "pending": "Pendiente",
+        "preparing": "Preparando",
+        "ready": "Listo",
+        "delivered": "Entregado",
+        "cancelled": "Cancelado"
+      },
+      "status": {
+        "pending": "Pendiente",
+        "preparing": "Preparando",
+        "ready": "Listo",
+        "delivered": "Entregado",
+        "cancelled": "Cancelado"
+      },
+      "edit": {
+        "title": "Editar pedido",
+        "confirm": "Guardar"
+      }
+    },
+    "detail": {
+      "noOrder": "Selecciona un pedido",
+      "noItems": "Sin artículos aún",
+      "charge": "Cobrar",
+      "voidOrder": "Anular",
+      "closeOrder": "Cerrar Pedido",
+      "advancedPayment": "Pagos",
+      "print": "Imprimir",
+      "edit": "Editar",
+      "cancel": "Cancelar",
+      "kitchen": "Cocina",
+      "notes": "Notas",
+      "addNote": "Agregar una nota…",
+      "subtotal": "Subtotal",
+      "tax": "Impuesto",
+      "total": "Total",
+      "items": "artículos",
+      "sections": {
+        "new": "Nuevo",
+        "preparing": "Preparando",
+        "ready": "Listo",
+        "served": "Servido"
+      },
+      "item": {
+        "delete": {
+          "title": "¿Eliminar producto?",
+          "message": "¿Eliminar {{name}} de esta orden?",
+          "confirm": "Eliminar",
+          "cancel": "Cancelar"
+        },
+        "updateError": "Error al actualizar la cantidad",
+        "deleteError": "Error al eliminar el producto"
+      },
+      "cancelledNotice": "Este pedido ha sido anulado y no se puede editar.",
+      "completeOrder": "Completar pedido",
+      "payAndComplete": "Pagar ${{amount}} y completar",
+      "remaining": "Restante",
+      "amountPaid": "Monto pagado",
+      "paidInFull": "Pagado en su totalidad",
+      "selectMethodHint": "Selecciona un método de pago o usa el panel de pagos para dividir la cuenta.",
+      "close": {
+        "patchFailed": "Pago registrado — toca para reintentar cerrar el pedido",
+        "retry": "Reintentar cierre"
+      },
+      "kitchenError": "No se pudo enviar a cocina",
+      "itemStatus": {
+        "NEW": "Nuevo",
+        "SENT_TO_KITCHEN": "Enviado",
+        "PREPARED": "Listo"
+      }
+    },
+    "void": {
+      "title": "Anular pedido",
+      "reasonLabel": "Selecciona un motivo",
+      "detailsLabel": "Detalles adicionales",
+      "detailsPlaceholder": "Describe el motivo…",
+      "confirm": "Anular pedido",
+      "reasons": {
+        "customerRequest": "Solicitud del cliente",
+        "kitchenError": "Error de cocina",
+        "outOfStock": "Sin stock",
+        "duplicate": "Pedido duplicado",
+        "other": "Otro"
+      },
+      "errors": {
+        "reasonRequired": "Por favor selecciona un motivo",
+        "detailsRequired": "Los detalles son obligatorios cuando el motivo es \"Otro\"",
+        "failed": "Error al anular el pedido. Inténtalo de nuevo."
+      }
+    },
+    "products": {
+      "search": "Buscar productos…",
+      "unavailable": "No disponible",
+      "all": "Todo",
+      "empty": "No se encontraron productos",
+      "error": "No se pudieron cargar los productos",
+      "retry": "Reintentar"
+    },
+    "addItem": {
+      "noOrder": {
+        "title": "Sin pedido activo",
+        "message": "Crea o selecciona un pedido para agregar productos."
+      },
+      "modal": {
+        "quantity": "Cantidad",
+        "extras": "Agregar extras",
+        "ingredients": "Quitar ingredientes",
+        "confirm": "Agregar al pedido",
+        "confirmEdit": "Actualizar"
+      },
+      "error": "No se pudo agregar el artículo"
+    },
+    "payment": {
+      "title": "Pago",
+      "summary": "Total del pedido",
+      "orderTotal": "Total del pedido",
+      "enterAmount": "Ingresar monto",
+      "change": "Cambio",
+      "confirm": "Confirmar pago",
+      "addPayment": "Agregar pago",
+      "completeOrder": "Completar pedido",
+      "split": "Dividir pago",
+      "method": "Método de pago",
+      "paid": "Pagado",
+      "remaining": "Restante",
+      "paidInFull": "Pagado en su totalidad",
+      "recordedPayments": "Pagos registrados",
+      "exactAmount": "Exacto",
+      "halfAmount": "Mitad",
+      "methods": {
+        "cash": "Efectivo",
+        "card": "Tarjeta",
+        "debit": "Débito",
+        "transfer": "Transferencia"
+      },
+      "cancel": {
+        "title": "¿Cancelar pago?",
+        "message": "¿Eliminar el pago de ${{amount}} de este pedido?",
+        "confirm": "Cancelar pago",
+        "dismiss": "Mantener"
+      },
+      "errors": {
+        "addFailed": "No se pudo registrar el pago. Por favor, intenta de nuevo.",
+        "cancelFailed": "No se pudo cancelar el pago. Por favor, intenta de nuevo.",
+        "exceedsRemaining": "El monto no puede superar el saldo restante de ${{remaining}}."
+      },
+      "failureReason": {
+        "ORDER_CANCELLED": "Pedido cancelado",
+        "STAFF_CANCEL": "Cancelado por el personal",
+        "WRONG_AMOUNT": "Monto incorrecto",
+        "WRONG_PAYMENT_METHOD": "Método de pago incorrecto",
+        "CUSTOMER_CANCELLED": "Cancelado por el cliente",
+        "DUPLICATE_PAYMENT": "Pago duplicado",
+        "PAYMENT_FAILED": "Pago fallido",
+        "CHECKOUT_SESSION_EXPIRED": "Sesión expirada",
+        "PAYMENT_CANCELED": "Pago cancelado"
+      }
+    }
+  },
+  "app": {
+    "name": "MiApp",
+    "settings": {
+      "title": "Configuración de la App",
+      "language": "Idioma",
+      "languageModalDescription": "Nuestra aplicación utiliza el mismo idioma que tu dispositivo. Para cambiar el idioma, por favor modifica la configuración de idioma de tu dispositivo.",
+      "theme": "Tema",
+      "light": "Claro",
+      "dark": "Oscuro",
+      "system": "Predeterminado del sistema",
+      "goToSettings": "Ir a Configuración"
+    }
+  },
   "common": {
     "email": "Correo electrónico",
     "password": "Contraseña",
     "emailPlaceholder": "tu@ejemplo.com",
-    "passwordPlaceholder": "••••••••"
+    "passwordPlaceholder": "••••••••",
+    "ok": "OK"
   },
   "validation": {
     "emailRequired": "El correo es obligatorio",
@@ -11,6 +207,7 @@
     "passwordRequired": "La contraseña es obligatoria",
     "passwordMin6": "Mínimo 6 caracteres",
     "passwordMin8": "Mínimo 8 caracteres",
+    "passwordStrong": "Debe incluir mayúscula, minúscula, número y símbolo",
     "nameRequired": "El nombre es obligatorio",
     "confirmPasswordRequired": "Confirma tu contraseña",
     "passwordsMismatch": "Las contraseñas no coinciden"
@@ -25,7 +222,18 @@
     "error": "Error al iniciar sesión. Intenta de nuevo.",
     "orContinueWith": "o continuar con",
     "googleButton": "Continuar con Google",
-    "googleError": "Error al iniciar sesión con Google. Intenta de nuevo."
+    "googleError": "Error al iniciar sesión con Google. Intenta de nuevo.",
+    "deactivatedTitle": "Cuenta desactivada",
+    "deactivatedMessage": "Tu cuenta ha sido desactivada. ¿Deseas reactivarla?",
+    "deactivatedConfirm": "Reactivar",
+    "notVerifiedMessage": "Por favor verifica tu correo electrónico para continuar."
+  },
+  "restore": {
+    "title": "Reactivar cuenta",
+    "subtitle": "Ingresa tus credenciales para restaurar tu cuenta desactivada.",
+    "action": "Reactivar",
+    "backToSignIn": "Volver a Iniciar Sesión",
+    "error": "No se pudo reactivar. Verifica tus credenciales e intenta de nuevo."
   },
   "register": {
     "title": "Crear cuenta",
@@ -52,6 +260,10 @@
   "resetPassword": {
     "title": "Restablecer contraseña",
     "subtitle": "Ingresa tu nueva contraseña",
+    "codeLabel": "Código de verificación",
+    "codePlaceholder": "000000",
+    "invalidCode": "Por favor ingresa un código de 6 dígitos válido.",
+    "rateLimitError": "Demasiados intentos. Por favor espera antes de intentarlo de nuevo.",
     "newPassword": "Nueva Contraseña",
     "confirmNewPassword": "Confirmar Nueva Contraseña",
     "resetPassword": "Restablecer Contraseña",
@@ -59,7 +271,771 @@
     "success": "¡Contraseña restablecida exitosamente!",
     "error": "Error al restablecer la contraseña. Intenta de nuevo."
   },
+  "verifyEmail": {
+    "title": "Verifica tu correo",
+    "subtitle": "Enviamos un código de 6 dígitos a {{email}}",
+    "codeLabel": "Código de verificación",
+    "codePlaceholder": "000000",
+    "verify": "Verificar correo",
+    "resend": "Reenviar código",
+    "resendIn": "Reenviar en {{seconds}}s",
+    "resendSuccess": "Se ha enviado un nuevo código.",
+    "invalidCode": "Ingresa un código válido de 6 dígitos.",
+    "error": "Código inválido o expirado. Intenta de nuevo.",
+    "rateLimitError": "Demasiados intentos. Espera antes de volver a intentarlo.",
+    "successTitle": "¡Correo verificado!",
+    "successMessage": "Tu correo ha sido verificado. Ya puedes iniciar sesión.",
+    "backToSignIn": "Volver a Iniciar Sesión"
+  },
   "home": {
     "welcome": "¡Bienvenido! Has iniciado sesión."
+  },
+  "currency": {
+    "usd": "$",
+    "eur": "€",
+    "gbp": "£",
+    "brl": "R$",
+    "ars": "$",
+    "uyu": "$U",
+    "mxn": "$",
+    "clp": "$",
+    "cop": "$",
+    "cad": "CA$",
+    "aud": "A$",
+    "jpy": "¥",
+    "cny": "¥",
+    "chf": "CHF",
+    "inr": "₹"
+  },
+  "user": {
+    "profile": {
+      "title": "Perfil",
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "phone": "Teléfono",
+      "memberSince": "Miembro desde",
+      "accountStatus": "Estado de la cuenta",
+      "verified": "Verificado",
+      "unverified": "No verificado",
+      "errorLoading": "Error al cargar el perfil.",
+      "logoutAll": "Cerrar sesión en todos los dispositivos",
+      "logout": "Cerrar Sesión",
+      "editProfile": "Editar Perfil"
+    },
+    "account": {
+      "title": "Gestión de la Cuenta",
+      "passwordModification": "Modificación de Contraseña",
+      "deactivate": "Desactivar Cuenta",
+      "delete": "Eliminar Cuenta"
+    }
+  },
+  "subscription": {
+    "title": "Suscripción",
+    "plan": "Plan",
+    "status": "Estado",
+    "active": "Activa",
+    "inactive": "Inactiva",
+    "expiresOn": "Expira el",
+    "canceledAt": "Cancelada el",
+    "renew": "Renovar Suscripción",
+    "gate": {
+      "title": "Suscripción requerida",
+      "description": "Necesitas una suscripción activa para usar esta aplicación. Administra tu plan en la web y toca \"Verificar de nuevo\" una vez activado.",
+      "manageButton": "Administrar suscripción",
+      "retryButton": "Verificar de nuevo",
+      "logout": "Cerrar sesión"
+    },
+    "processing": {
+      "title": "Procesando pago",
+      "description": "Tu primer pago está siendo confirmado. Esto suele tardar unos minutos — toca \"Verificar de nuevo\" para actualizar.",
+      "retryButton": "Verificar de nuevo"
+    },
+    "readonly": {
+      "banner": "Solo lectura — la suscripción está vencida o pausada.",
+      "manage": "Administrar suscripción"
+    }
+  },
+  "org": {
+    "bootstrap": {
+      "loading": "Cargando tu organización…"
+    },
+    "setup": {
+      "blockedTitle": "Configuración de organización no disponible",
+      "blockedDescription": "Tu suscripción está vencida o pausada. Renuévala para crear tu organización."
+    },
+    "nav": {
+      "organization": "Organización",
+      "products": "Productos",
+      "sales": "Ventas",
+      "payments": "Pagos",
+      "profile": "Perfil",
+      "productsList": "Productos",
+      "categories": "Categorías",
+      "extras": "Extras",
+      "ingredients": "Ingredientes",
+      "tags": "Etiquetas",
+      "stock": "Stock",
+      "orders": "Pedidos",
+      "analytics": "Analíticas",
+      "clients": "Clientes",
+      "paymentMethods": "Métodos de pago",
+      "backToPOS": "Volver al POS"
+    },
+    "actions": {
+      "save": "Guardar",
+      "cancel": "Cancelar",
+      "delete": "Eliminar",
+      "edit": "Editar",
+      "create": "Crear",
+      "confirm": "Confirmar",
+      "selectOrganization": "Seleccionar organización",
+      "createOrganization": "Crear organización"
+    },
+    "profile": {
+      "title": "Organización",
+      "changeLogo": "Cambiar logo",
+      "logoHint": "JPG o PNG, máx 2 MB",
+      "verified": "Verificado",
+      "infoSection": "Información",
+      "name": "Nombre",
+      "address": "Dirección",
+      "contactEmail": "Correo",
+      "contactPhone": "Teléfono",
+      "stripeSection": "Cuenta Stripe",
+      "stripeDescription": "Gestiona tu procesamiento de pagos.",
+      "stripeConnected": "Conectado",
+      "stripeManage": "Gestionar en Stripe",
+      "stripeNotConnected": "Sin cuenta de Stripe conectada",
+      "stripeSetupIncomplete": "Configuración incompleta",
+      "stripeConnect": "Conectar con Stripe",
+      "stripeCompleteSetup": "Completar configuración",
+      "stripeAccountId": "Cuenta",
+      "stripeError": "Error al conectar con Stripe. Intenta de nuevo.",
+      "domainsSection": "Dominios",
+      "domainsDescription": "Dominios vinculados a tu organización para la resolución de clientes.",
+      "domainAdd": "Agregar",
+      "domainAddPlaceholder": "ej. miapp.com",
+      "domainEditTitle": "Editar dominio",
+      "domainEditLabel": "Dominio",
+      "domainDeleteTitle": "¿Eliminar dominio?",
+      "domainDeleteDescription": "Esta acción no se puede deshacer.",
+      "domainLastWarning": "No puedes eliminar el único dominio",
+      "domainRequired": "Ingresa un dominio",
+      "domainConflict": "Este dominio ya existe"
+    },
+    "products": {
+      "title": "Productos",
+      "search": "Buscar productos…",
+      "create": "Nuevo producto",
+      "edit": "Editar producto",
+      "name": "Nombre del producto",
+      "description": "Descripción",
+      "price": "Precio",
+      "stock": "Stock",
+      "availability": "Disponibilidad",
+      "available": "Disponible",
+      "unavailable": "No disponible",
+      "inactive": "Inactivo",
+      "outOfStock": "Sin stock",
+      "image": "Imagen",
+      "imageHint": "JPG, JPEG, PNG o WEBP, máx 5 MB",
+      "addImage": "Agregar imagen",
+      "changeImage": "Cambiar imagen",
+      "imageSizeError": "La imagen supera el límite de 5 MB",
+      "imageFormatError": "Formato inválido. Usa JPG, JPEG, PNG o WEBP",
+      "imageUploadError": "Error al subir. Intenta de nuevo.",
+      "category": "Categoría",
+      "selectCategory": "Seleccionar categoría",
+      "noCategory": "Sin categoría",
+      "tags": "Etiquetas",
+      "addTag": "Agregar etiqueta",
+      "extras": "Extras",
+      "addExtra": "Agregar extra",
+      "ingredients": "Ingredientes",
+      "addIngredient": "Agregar ingrediente",
+      "quantity": "Cant.",
+      "appearance": "Apariencia",
+      "backgroundColor": "Color de fondo",
+      "textColor": "Color de texto",
+      "badge": "Etiqueta",
+      "badgePlaceholder": "ej. Nuevo, Popular",
+      "highlight": "Destacar",
+      "highlightHint": "Destacar este producto en el POS",
+      "sortOrder": "Orden",
+      "preview": "Vista previa",
+      "showDeleted": "Ver eliminados",
+      "trackStock": "Rastrear stock",
+      "trackStockHint": "Monitorea y gestiona los niveles de stock de este producto",
+      "reservedStock": "Stock reservado",
+      "lowStockThreshold": "Umbral de stock bajo",
+      "lowStockThresholdHint": "Se activará una alerta cuando el stock baje de este valor",
+      "active": "Activo",
+      "empty": "Sin productos",
+      "emptyDescription": "Crea tu primer producto para empezar.",
+      "restore": "Restaurar",
+      "deleteTitle": "¿Eliminar producto?",
+      "deleteDescription": "\"{{name}}\" será eliminado. Puedes restaurarlo después.",
+      "restoreTitle": "¿Restaurar producto?",
+      "restoreDescription": "\"{{name}}\" estará disponible nuevamente.",
+      "done": "Listo",
+      "categories": {
+        "all": "Todo",
+        "Food": "Comida",
+        "Drinks": "Bebidas",
+        "Desserts": "Postres"
+      }
+    },
+    "extras": {
+      "title": "Extras",
+      "search": "Buscar extras…",
+      "create": "Nuevo extra",
+      "edit": "Editar extra",
+      "name": "Nombre del extra",
+      "description": "Descripción",
+      "price": "Precio",
+      "showDeleted": "Ver eliminados",
+      "active": "Activo",
+      "inactive": "Inactivo",
+      "empty": "Sin extras",
+      "emptyDescription": "Crea tu primer extra para ofrecer complementos en tus productos.",
+      "restore": "Restaurar",
+      "deleteTitle": "¿Eliminar extra?",
+      "deleteDescription": "\"{{name}}\" será eliminado. Puedes restaurarlo después.",
+      "restoreTitle": "¿Restaurar extra?",
+      "restoreDescription": "\"{{name}}\" estará disponible nuevamente."
+    },
+    "ingredients": {
+      "title": "Ingredientes",
+      "search": "Buscar ingredientes…",
+      "create": "Nuevo ingrediente",
+      "edit": "Editar ingrediente",
+      "name": "Nombre del ingrediente",
+      "description": "Descripción",
+      "showDeleted": "Ver eliminados",
+      "active": "Activo",
+      "inactive": "Inactivo",
+      "empty": "Sin ingredientes",
+      "emptyDescription": "Crea tu primer ingrediente para rastrear tu inventario.",
+      "restore": "Restaurar",
+      "deleteTitle": "¿Eliminar ingrediente?",
+      "deleteDescription": "\"{{name}}\" será eliminado. Puedes restaurarlo después.",
+      "restoreTitle": "¿Restaurar ingrediente?",
+      "restoreDescription": "\"{{name}}\" estará disponible nuevamente."
+    },
+    "categories": {
+      "title": "Categorías",
+      "search": "Buscar categorías…",
+      "create": "Nueva categoría",
+      "edit": "Editar categoría",
+      "name": "Nombre de categoría",
+      "description": "Descripción",
+      "backgroundColor": "Color de fondo",
+      "textColor": "Color de texto",
+      "badge": "Etiqueta",
+      "badgePlaceholder": "ej. Nuevo, Popular",
+      "highlight": "Destacar",
+      "highlightHint": "Destacar esta categoría en el POS",
+      "sortOrder": "Orden",
+      "preview": "Vista previa",
+      "previewPlaceholder": "Nombre de categoría",
+      "showDeleted": "Ver eliminados",
+      "active": "Activo",
+      "inactive": "Inactivo",
+      "empty": "Sin categorías",
+      "emptyDescription": "Crea tu primera categoría para organizar tus productos.",
+      "restore": "Restaurar",
+      "deleteTitle": "¿Eliminar categoría?",
+      "deleteDescription": "\"{{name}}\" será eliminada. Puedes restaurarla después.",
+      "restoreTitle": "¿Restaurar categoría?",
+      "restoreDescription": "\"{{name}}\" estará disponible nuevamente."
+    },
+    "tags": {
+      "title": "Etiquetas",
+      "search": "Buscar etiquetas…",
+      "create": "Nueva etiqueta",
+      "edit": "Editar etiqueta",
+      "name": "Nombre",
+      "description": "Descripción",
+      "color": "Color",
+      "backgroundColor": "Color de fondo",
+      "textColor": "Color de texto",
+      "badge": "Etiqueta",
+      "badgePlaceholder": "ej. Vegetariano, Picante",
+      "highlight": "Destacar",
+      "highlightHint": "Destacar esta etiqueta en el POS",
+      "sortOrder": "Orden",
+      "preview": "Vista previa",
+      "showDeleted": "Ver eliminados",
+      "active": "Activo",
+      "inactive": "Inactivo",
+      "productsCount": "{{count}} productos",
+      "empty": "Sin etiquetas",
+      "emptyDescription": "Crea tu primera etiqueta para etiquetar tus productos.",
+      "restore": "Restaurar",
+      "deleteTitle": "¿Eliminar etiqueta?",
+      "deleteDescription": "\"{{name}}\" será eliminada. Puedes restaurarla después.",
+      "restoreTitle": "¿Restaurar etiqueta?",
+      "restoreDescription": "\"{{name}}\" estará disponible nuevamente."
+    },
+    "stock": {
+      "title": "Stock",
+      "search": "Buscar…",
+      "lowStockAlert": "{{count}} artículos con stock bajo",
+      "low": "Bajo",
+      "ok": "OK",
+      "minLabel": "Mín",
+      "history": "Historial",
+      "product": "Producto",
+      "current": "Actual",
+      "reserved": "Reservado",
+      "minimum": "Mín",
+      "unit": "Unidad",
+      "status": "Estado"
+    },
+    "payment": {
+      "title": "Métodos de pago",
+      "description": "Activa los métodos de pago aceptados.",
+      "builtIn": "Estándar",
+      "custom": "Personalizado",
+      "enabled": "Activado",
+      "disabled": "Desactivado",
+      "noCustom": "Sin métodos personalizados.\nToca + para agregar.",
+      "dragHint": "Mantén presionado para reordenar.",
+      "createTitle": "Nuevo método",
+      "methodName": "Nombre",
+      "iconHint": "El ícono se asignará automáticamente.",
+      "search": "Buscar métodos de pago…",
+      "showDeleted": "Ver eliminados",
+      "create": "Nuevo método",
+      "edit": "Editar método",
+      "name": "Nombre",
+      "fieldDescription": "Descripción",
+      "descriptionPlaceholder": "Opcional",
+      "isActive": "Activo",
+      "isActiveHint": "Mostrar este método al pagar",
+      "isDefault": "Por defecto",
+      "isDefaultHint": "Preseleccionar al pagar",
+      "sortOrder": "Orden",
+      "active": "Activo",
+      "inactive": "Inactivo",
+      "default": "Por defecto",
+      "system": "Sistema",
+      "empty": "Sin métodos de pago",
+      "emptyDescription": "Crea tu primer método de pago.",
+      "restore": "Restaurar",
+      "deleteTitle": "¿Eliminar método de pago?",
+      "deleteDescription": "\"{{name}}\" será eliminado. Podrás restaurarlo después.",
+      "restoreTitle": "¿Restaurar método de pago?",
+      "restoreDescription": "\"{{name}}\" volverá a estar disponible.",
+      "systemDeleteHint": "Los métodos del sistema no se pueden eliminar"
+    },
+    "orders": {
+      "title": "Pedidos",
+      "search": "Buscar…",
+      "items": "artículos",
+      "empty": "Sin pedidos",
+      "emptyDescription": "Crea tu primer pedido",
+      "withDeleted": "Mostrar eliminados",
+      "create": "Nuevo pedido",
+      "customerName": "Nombre del cliente",
+      "customerNamePlaceholder": "Opcional",
+      "product": "Producto",
+      "productPlaceholder": "Buscar producto…",
+      "quantity": "Cantidad",
+      "extras": "Extras",
+      "removedIngredients": "Quitar ingredientes",
+      "addItem": "Agregar ítem",
+      "removeItem": "Eliminar",
+      "subtotal": "Subtotal",
+      "total": "Total",
+      "minOneItem": "Agrega al menos un artículo",
+      "status": {
+        "all": "Todo",
+        "pending": "Pendiente",
+        "preparing": "Preparando",
+        "ready": "Listo",
+        "delivered": "Entregado",
+        "cancelled": "Cancelado",
+        "PENDING": "Pendiente",
+        "IN_PROGRESS": "En progreso",
+        "READY": "Listo",
+        "COMPLETED": "Completado",
+        "CANCELLED": "Cancelado",
+        "REOPENED": "Reabierto"
+      },
+      "paymentStatus": {
+        "PENDING": "Pendiente",
+        "PROCESSING": "Procesando",
+        "COMPLETED": "Completado",
+        "PAID": "Pagado",
+        "FAILED": "Fallido",
+        "REFUNDED": "Reembolsado",
+        "EXPIRED": "Expirado",
+        "CANCELED": "Cancelado"
+      },
+      "cols": {
+        "number": "Pedido",
+        "customer": "Cliente",
+        "items": "Artículos",
+        "total": "Total",
+        "status": "Estado",
+        "payment": "Pago",
+        "date": "Fecha",
+        "time": "Hora"
+      },
+      "detail": {
+        "updateStatus": "Actualizar estado",
+        "items": "Artículos",
+        "summary": "Resumen",
+        "currency": "Moneda",
+        "extras": "Extras",
+        "removedIngredients": "Ingredientes eliminados",
+        "noItems": "Sin artículos"
+      },
+      "updateStatus": {
+        "title": "Actualizar estado del pedido",
+        "label": "Nuevo estado",
+        "confirm": "Confirmar"
+      }
+    },
+    "analytics": {
+      "title": "Analíticas",
+      "revenue": "Ingresos totales",
+      "orders": "pedidos",
+      "avgOrder": "Ticket medio",
+      "newClients": "Nuevos clientes",
+      "vsLastMonth": "vs mes anterior",
+      "revenueChart": "Ingresos",
+      "ordersChart": "Pedidos",
+      "last7days": "Últimos 7 días",
+      "topProducts": "Top productos"
+    },
+    "clients": {
+      "title": "Clientes",
+      "search": "Buscar…",
+      "all": "Todos",
+      "gold": "Oro",
+      "silver": "Plata",
+      "bronze": "Bronce",
+      "orders": "Pedidos",
+      "spent": "Total gastado",
+      "lastOrder": "Último pedido",
+      "loyaltyProgress": "Fidelidad",
+      "ordersToNextLevel": "pedidos al siguiente nivel",
+      "contact": "Contactar",
+      "viewOrders": "Ver pedidos",
+      "name": "Nombre",
+      "email": "Correo",
+      "createdAt": "Creado",
+      "active": "Activo",
+      "inactive": "Inactivo",
+      "showDeleted": "Ver eliminados",
+      "edit": "Editar cliente",
+      "namePlaceholder": "Nombre del cliente",
+      "create": "Nuevo cliente",
+      "empty": "Sin clientes",
+      "emptyDescription": "Aún no se han registrado clientes.",
+      "deleteTitle": "¿Desactivar cliente?",
+      "deleteDescription": "\"{{name}}\" será desactivado. Podrás restaurarlo más tarde.",
+      "restoreTitle": "¿Restaurar cliente?",
+      "restoreDescription": "\"{{name}}\" será reactivado.",
+      "restore": "Restaurar",
+      "permanentDeleteTitle": "¿Eliminar permanentemente?",
+      "permanentDeleteDescription": "Esta acción es permanente e irreversible. Se perderán todos los datos de {{name}}.",
+      "permanentDelete": "Eliminar permanentemente",
+      "pauseTitle": "¿Pausar cuenta?",
+      "pauseDescription": "Esto desactivará temporalmente la cuenta de {{name}}.",
+      "pause": "Pausar cuenta",
+      "paused": "Pausada",
+      "deleted": "Eliminado",
+      "permDeletedTooltip": "Esta cuenta ha sido eliminada permanentemente",
+      "restoreAccountTitle": "¿Restaurar cuenta?",
+      "restoreAccountDescription": "Esto reactivará la cuenta del cliente.",
+      "restoreAccount": "Restaurar cuenta",
+      "cannotDelete": "No se puede eliminar",
+      "pauseFirst": "Pausa la cuenta antes de eliminarla permanentemente"
+    },
+    "paymentsPage": {
+      "title": "Pagos",
+      "search": "Buscar pagos…",
+      "create": "Nuevo pago",
+      "empty": "Sin pagos",
+      "emptyDescription": "Aún no se han registrado pagos.",
+      "status": {
+        "all": "Todos",
+        "PENDING": "Pendiente",
+        "PROCESSING": "Procesando",
+        "COMPLETED": "Completado",
+        "PAID": "Pagado",
+        "FAILED": "Fallido",
+        "REFUNDED": "Reembolsado",
+        "EXPIRED": "Expirado",
+        "CANCELLED": "Cancelado"
+      },
+      "cancelTitle": "Cancelar pago",
+      "cancelWarning": "Esta acción cancelará el pago y no se puede deshacer.",
+      "cancelReasonLabel": "Motivo",
+      "cancelConfirm": "Cancelar pago",
+      "failureReason": {
+        "WRONG_AMOUNT": "Monto incorrecto",
+        "WRONG_PAYMENT_METHOD": "Método de pago incorrecto",
+        "CUSTOMER_CANCELLED": "Cliente canceló",
+        "DUPLICATE_PAYMENT": "Pago duplicado",
+        "OTHER": "Otro"
+      },
+      "form": {
+        "orderId": "ID de orden",
+        "amount": "Monto",
+        "amountPlaceholder": "ej. 15.50",
+        "currency": "Moneda",
+        "paymentMethod": "Método de pago",
+        "noMethods": "No hay métodos de pago disponibles",
+        "errorRequired": "Por favor completa todos los campos obligatorios."
+      }
+    }
+  },
+  "account": {
+    "actions": {
+      "save": "Guardar cambios",
+      "cancel": "Cancelar",
+      "confirm": "Confirmar"
+    },
+    "sections": {
+      "account": "Cuenta",
+      "subscription": "Suscripción",
+      "sessions": "Sesiones y seguridad"
+    },
+    "profile": {
+      "title": "Perfil",
+      "memberSince": "Miembro desde",
+      "editProfile": "Editar perfil"
+    },
+    "profileUpdate": {
+      "title": "Editar perfil",
+      "changePhoto": "Cambiar foto",
+      "name": "Nombre completo",
+      "namePlaceholder": "Tu nombre",
+      "phone": "Teléfono",
+      "phonePlaceholder": {
+        "default": "+598 9123 4567",
+        "en": "+1 555 123 4567",
+        "es": "+34 612 34 56 78",
+        "fr": "+33 6 12 34 56 78",
+        "uy": "+598 9123 4567",
+        "ar": "+54 9 11 1234 5678"
+      },
+      "success": "Perfil actualizado exitosamente.",
+      "error": "Error al actualizar el perfil. Intenta de nuevo."
+    },
+    "email": {
+      "title": "Correo electrónico",
+      "description": "Actualiza el correo usado para iniciar sesión y recibir notificaciones.",
+      "currentLabel": "Correo actual",
+      "newLabel": "Nuevo correo",
+      "newPlaceholder": "nuevocorreo@ejemplo.com",
+      "passwordLabel": "Confirmar con contraseña",
+      "passwordPlaceholder": "••••••••",
+      "action": "Actualizar correo",
+      "helper": "Enviaremos un enlace de verificación a tu nueva dirección.",
+      "noEmail": "Sin correo registrado",
+      "success": "Correo actualizado. Revisa tu bandeja de entrada para verificarlo.",
+      "error": "Error al actualizar el correo. Intenta de nuevo.",
+      "confirmTitle": "Verifica el nuevo correo",
+      "confirmDescription": "Ingresa el código de 6 dígitos enviado a tu nueva dirección.",
+      "codeLabel": "Código de verificación",
+      "codePlaceholder": "000000",
+      "confirmAction": "Verificar",
+      "confirmSuccess": "Tu correo ha sido actualizado.",
+      "codeInvalid": "Ingresa un código de 6 dígitos válido."
+    },
+    "password": {
+      "title": "Contraseña",
+      "subtitle": "Cambia tu contraseña de acceso",
+      "description": "Por tu seguridad, elige una contraseña que no hayas usado antes.",
+      "current": "Contraseña actual",
+      "currentRequired": "La contraseña actual es obligatoria",
+      "new": "Nueva contraseña",
+      "newRequired": "La nueva contraseña es obligatoria",
+      "confirm": "Confirmar nueva contraseña",
+      "action": "Cambiar contraseña",
+      "tip1": "Usa al menos 8 caracteres",
+      "tip2": "Combina letras, números y símbolos",
+      "tip3": "Evita reutilizar contraseñas de otros sitios",
+      "mismatch": "Las contraseñas nuevas no coinciden.",
+      "success": "Contraseña cambiada exitosamente.",
+      "error": "Error al cambiar la contraseña. Intenta de nuevo."
+    },
+    "theme": {
+      "title": "Apariencia",
+      "description": "Elige cómo debe verse la app. Sigue tu sistema por defecto.",
+      "preview": "Vista previa",
+      "previewSample": "El rápido zorro marrón",
+      "previewBody": "Toca una opción para ver cómo se adaptan el texto, las superficies y los acentos.",
+      "options": {
+        "system": "Sistema",
+        "light": "Claro",
+        "dark": "Oscuro"
+      },
+      "subtitles": {
+        "system": "Seguir configuración del dispositivo",
+        "light": "Usar siempre tema claro",
+        "dark": "Usar siempre tema oscuro"
+      }
+    },
+    "subscription": {
+      "current": "Plan actual",
+      "history": "Historial de facturación",
+      "upgrade": "Mejorar plan"
+    },
+    "subscriptionCreate": {
+      "title": "Elige un plan",
+      "subtitle": "Cancela cuando quieras. Cambia de plan cuando lo necesites.",
+      "perMonth": "/ mes",
+      "perYear": "/ año",
+      "popular": "Más popular",
+      "action": "Continuar",
+      "terms": "Al continuar aceptas nuestros Términos y Política de Privacidad.",
+      "errorTitle": "Algo salió mal",
+      "errorDescription": "No se pudo iniciar el pago. Por favor inténtalo de nuevo.",
+      "plansErrorTitle": "Planes no disponibles",
+      "plansErrorDescription": "No se pudieron cargar los planes disponibles.",
+      "retry": "Reintentar",
+      "plans": {
+        "basic": {
+          "name": "Básico",
+          "features": {
+            "0": "Hasta 3 proyectos",
+            "1": "Soporte comunitario",
+            "2": "Analíticas básicas"
+          }
+        },
+        "pro": {
+          "name": "Pro",
+          "features": {
+            "0": "Proyectos ilimitados",
+            "1": "Soporte prioritario",
+            "2": "Analíticas avanzadas",
+            "3": "Dominios personalizados",
+            "4": "Acceso a API"
+          }
+        }
+      }
+    },
+    "subscriptionCurrent": {
+      "title": "Tu suscripción",
+      "activePlan": "Plan actual",
+      "status": {
+        "active": "Activa",
+        "trial": "En prueba",
+        "processing": "En proceso",
+        "past_due": "Vencida",
+        "canceled": "Cancelada",
+        "expired": "Expirada",
+        "incomplete": "Incompleto",
+        "paused": "En pausa"
+      },
+      "renewsOn": "Se renueva el {{date}}",
+      "cancelsOn": "Cancela el {{date}}",
+      "processingHint": "Tu suscripción está activándose. Esto puede tardar unos segundos.",
+      "processingTitle": "Pago no completado",
+      "processingDescription": "Tu proceso de pago no finalizó. Continúa para completar tu suscripción.",
+      "continueSubscription": "Completar suscripción",
+      "alreadyPaidHint": "Si ya pagaste, la activación puede tardar unos segundos.",
+      "refresh": "Actualizar",
+      "billing": "Facturación",
+      "paymentMethod": "Método de pago",
+      "changePlan": "Cambiar plan",
+      "changePlanTitle": "Cambiar plan",
+      "changePlanDescription": "¿Cambiar al plan {{plan}}?",
+      "changePlanConfirm": "Cambiar plan",
+      "cancel": "Cancelar suscripción",
+      "cancelConfirmTitle": "¿Cancelar suscripción?",
+      "cancelConfirmDescription": "Mantendrás el acceso hasta el final del período de facturación actual.",
+      "reactivate": "Reactivar suscripción",
+      "changePlanUpgradeHint": "Las actualizaciones se aplican de inmediato.",
+      "changePlanDowngradeHint": "Los cambios a un plan inferior tienen efecto al final del período de facturación actual.",
+      "noSubscription": "Sin suscripción activa",
+      "noSubscriptionDescription": "Suscríbete para desbloquear funciones premium.",
+      "noSubscriptionAction": "Ver planes",
+      "subscribe": "Suscribirse"
+    },
+    "subscriptionHistory": {
+      "title": "Historial de facturación",
+      "totalInvoices": "Facturas",
+      "paid": "Pagadas",
+      "amount": "Monto",
+      "invoices": "Facturas",
+      "empty": "Sin historial de facturación",
+      "emptyDescription": "Tu historial de facturación aparecerá aquí.",
+      "viewInvoice": "Ver factura",
+      "downloadPdf": "Descargar PDF",
+      "status": {
+        "paid": "Pagada",
+        "open": "Abierta",
+        "draft": "Borrador",
+        "void": "Anulada",
+        "uncollectible": "Incobrable",
+        "unknown": "Desconocido"
+      }
+    },
+    "logout": {
+      "title": "Cerrar sesión",
+      "description": "Serás desconectado de tu cuenta en este dispositivo.",
+      "action": "Cerrar sesión",
+      "confirmTitle": "¿Cerrar sesión?",
+      "confirmDescription": "Puedes iniciar sesión nuevamente en cualquier momento."
+    },
+    "logoutAll": {
+      "title": "Cerrar sesión en todos lados",
+      "description": "Finaliza cada sesión activa en tu cuenta. Deberás iniciar sesión nuevamente en cada dispositivo.",
+      "devicesLabel": "Dispositivos activos",
+      "action": "Cerrar sesión en todos los dispositivos",
+      "confirmTitle": "¿Cerrar sesión en todos los dispositivos?",
+      "confirmDescription": "Todos los dispositivos actualmente conectados serán desconectados inmediatamente.",
+      "current": "Este dispositivo",
+      "revokeLabel": "Revocar",
+      "revokeConfirmTitle": "¿Revocar esta sesión?",
+      "revokeConfirmDescription": "Ese dispositivo será desconectado inmediatamente.",
+      "errorTitle": "No se pudieron cargar las sesiones",
+      "errorDescription": "Verifica tu conexión e intenta de nuevo.",
+      "retry": "Reintentar",
+      "refresh": "Actualizar sesiones"
+    },
+    "dangerZone": {
+      "title": "Zona de peligro",
+      "description": "Estas acciones no se pueden deshacer fácilmente. Por favor procede con cuidado."
+    },
+    "deactivate": {
+      "title": "Desactivar cuenta",
+      "heading": "Tómate un descanso",
+      "description": "Oculta tu perfil y pausa toda la actividad. Puedes reactivar en cualquier momento volviendo a iniciar sesión.",
+      "bullets": {
+        "0": "Tu perfil queda oculto para los demás",
+        "1": "Tus datos y configuración se conservan",
+        "2": "La reactivación es instantánea al volver a iniciar sesión"
+      },
+      "dangerTitle": "Desactivar ahora",
+      "dangerDescription": "Se cerrará tu sesión en todos los dispositivos.",
+      "action": "Desactivar cuenta",
+      "confirmTitle": "¿Desactivar cuenta?",
+      "confirmDescription": "Puedes reactivarla en cualquier momento volviendo a iniciar sesión.",
+      "error": "Error al desactivar la cuenta. Intenta de nuevo.",
+      "confirmHint": "Escribe \"deactivate\" para habilitar el botón.",
+      "confirmLabel": "Confirmación",
+      "confirmError": "Escribe \"deactivate\" para continuar."
+    },
+    "delete": {
+      "title": "Eliminar cuenta",
+      "heading": "Esto es permanente",
+      "description": "Eliminar tu cuenta borra tu perfil, contenido y suscripción. Esto no se puede deshacer.",
+      "confirmHelper": "Escribe {{word}} para confirmar.",
+      "dangerTitle": "Eliminar para siempre",
+      "dangerDescription": "Todos los datos vinculados a tu cuenta serán eliminados en 30 días.",
+      "action": "Eliminar cuenta",
+      "confirmTitle": "¿Eliminar cuenta permanentemente?",
+      "confirmDescription": "Esta acción no se puede deshacer. Tu cuenta y todos los datos serán eliminados.",
+      "mismatch": "Escribe DELETE para confirmar.",
+      "error": "Error al eliminar la cuenta. Intenta de nuevo."
+    }
   }
 }

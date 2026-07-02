@@ -12,6 +12,10 @@ const envSchema = z.object({
   EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID: z.string().min(1, "EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID is required"),
   EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID: z.string().optional(),
   EXPO_PUBLIC_GOOGLE_ANDROID_CLIENT_ID: z.string().optional(),
+  EXPO_PUBLIC_SUBSCRIPTION_URL: z.preprocess(
+    (v) => (v === "" ? undefined : v),
+    z.string().url("EXPO_PUBLIC_SUBSCRIPTION_URL must be a valid URL").optional(),
+  ),
 });
 
 // ─── Parse ────────────────────────────────────────────────────────
@@ -24,6 +28,7 @@ const result = envSchema.safeParse({
   EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID: process.env.EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID,
   EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID: process.env.EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID,
   EXPO_PUBLIC_GOOGLE_ANDROID_CLIENT_ID: process.env.EXPO_PUBLIC_GOOGLE_ANDROID_CLIENT_ID,
+  EXPO_PUBLIC_SUBSCRIPTION_URL: process.env.EXPO_PUBLIC_SUBSCRIPTION_URL,
 });
 
 if (!result.success) {
@@ -50,6 +55,9 @@ export const env = {
   GOOGLE_WEB_CLIENT_ID: parsed.EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID,
   GOOGLE_IOS_CLIENT_ID: parsed.EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID,
   GOOGLE_ANDROID_CLIENT_ID: parsed.EXPO_PUBLIC_GOOGLE_ANDROID_CLIENT_ID,
+
+  /** Subscription management web URL (undefined until the page is live) */
+  SUBSCRIPTION_URL: parsed.EXPO_PUBLIC_SUBSCRIPTION_URL,
 
   /** true when APP_ENV === "development" */
   isDev: parsed.EXPO_PUBLIC_APP_ENV === "development",

@@ -1,34 +1,78 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { View, Text, KeyboardAvoidingView, Platform, ScrollView, StyleSheet } from "react-native";
 import { useForm, Controller } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
 import { useRouter, useLocalSearchParams } from "expo-router";
 import { useTranslation } from "react-i18next";
 import { useResetPassword } from "../hooks/useAuth";
 import { Button, Input } from "../../../shared/components";
 import { colors } from "../../../core/theme";
-import type { ResetPasswordRequest } from "../types";
 
-type ResetPasswordForm = Omit<ResetPasswordRequest, "token"> & { confirmPassword: string };
+type ResetForm = {
+  code: string;
+  password: string;
+  confirmPassword: string;
+};
 
 export function ResetPasswordScreen() {
   const { t } = useTranslation();
   const router = useRouter();
-  const { token } = useLocalSearchParams<{ token: string }>();
+  const { email = "" } = useLocalSearchParams<{ email: string }>();
   const resetMutation = useResetPassword();
+
+  const schema = useMemo(
+    () =>
+      z
+        .object({
+          code: z
+            .string()
+            .min(1, t("resetPassword.invalidCode"))
+            .regex(/^\d{6}$/, t("resetPassword.invalidCode")),
+          password: z
+            .string()
+            .min(1, t("validation.passwordRequired"))
+            .regex(
+              /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z\d]).{8,}$/,
+              t("validation.passwordStrong"),
+            ),
+          confirmPassword: z.string().min(1, t("validation.confirmPasswordRequired")),
+        })
+        .refine((v) => v.password === v.confirmPassword, {
+          message: t("validation.passwordsMismatch"),
+          path: ["confirmPassword"],
+        }),
+    [t],
+  );
 
   const {
     control,
     handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm<ResetPasswordForm>({
-    defaultValues: { password: "", confirmPassword: "" },
+    setError,
+    clearErrors,
+    formState: { errors, isValid },
+  } = useForm<ResetForm>({
+    resolver: zodResolver(schema),
+    defaultValues: { code: "", password: "", confirmPassword: "" },
+    mode: "onChange",
   });
 
-  const password = watch("password");
-
-  const onSubmit = ({ confirmPassword, ...data }: ResetPasswordForm) => {
-    resetMutation.mutate({ ...data, token: token ?? "" });
+  const onSubmit = ({ code, password }: ResetForm) => {
+    resetMutation.mutate(
+      { email, code: code.trim(), password },
+      {
+        onSuccess: () => {
+          router.replace("/login");
+        },
+        onError: (err) => {
+          const message =
+            err.statusCode === 429
+              ? t("resetPassword.rateLimitError")
+              : err.message || t("resetPassword.error");
+          setError("code", { type: "server", message });
+        },
+      },
+    );
   };
 
   return (
@@ -46,14 +90,33 @@ export function ResetPasswordScreen() {
           <Text style={styles.subtitle}>{t("resetPassword.subtitle")}</Text>
         </View>
 
-        {/* ── Form ───────────────────────────────────── */}
+        {/* ── OTP code ───────────────────────────────── */}
+        <Controller
+          control={control}
+          name="code"
+          render={({ field: { onChange, onBlur, value } }) => (
+            <Input
+              label={t("resetPassword.codeLabel")}
+              value={value}
+              onChangeText={(text) => {
+                onChange(text);
+                if (errors.code?.type === "server") clearErrors("code");
+              }}
+              onBlur={onBlur}
+              placeholder={t("resetPassword.codePlaceholder")}
+              keyboardType="number-pad"
+              maxLength={6}
+              autoComplete="one-time-code"
+              autoFocus
+              error={errors.code?.message}
+            />
+          )}
+        />
+
+        {/* ── New password ───────────────────────────── */}
         <Controller
           control={control}
           name="password"
-          rules={{
-            required: t("validation.passwordRequired"),
-            minLength: { value: 8, message: t("validation.passwordMin8") },
-          }}
           render={({ field: { onChange, onBlur, value } }) => (
             <Input
               label={t("resetPassword.newPassword")}
@@ -67,13 +130,10 @@ export function ResetPasswordScreen() {
           )}
         />
 
+        {/* ── Confirm password ───────────────────────── */}
         <Controller
           control={control}
           name="confirmPassword"
-          rules={{
-            required: t("validation.confirmPasswordRequired"),
-            validate: (value) => value === password || t("validation.passwordsMismatch"),
-          }}
           render={({ field: { onChange, onBlur, value } }) => (
             <Input
               label={t("resetPassword.confirmNewPassword")}
@@ -87,18 +147,10 @@ export function ResetPasswordScreen() {
           )}
         />
 
-        {/* ── Success Message ────────────────────────── */}
-        {resetMutation.isSuccess && (
-          <Text style={styles.successText}>
-            {resetMutation.data?.message ?? t("resetPassword.success")}
-          </Text>
-        )}
-
         {/* ── Error Message ──────────────────────────── */}
-        {resetMutation.isError && (
+        {resetMutation.isError && !errors.code && (
           <Text style={styles.errorText}>
-            {(resetMutation.error as { message?: string })?.message ??
-              t("resetPassword.error")}
+            {resetMutation.error?.message ?? t("resetPassword.error")}
           </Text>
         )}
 
@@ -106,6 +158,7 @@ export function ResetPasswordScreen() {
         <Button
           title={t("resetPassword.resetPassword")}
           loading={resetMutation.isPending}
+          disabled={!isValid || resetMutation.isPending}
           onPress={handleSubmit(onSubmit)}
         />
 
@@ -144,12 +197,6 @@ const styles = StyleSheet.create({
     marginTop: 8,
     fontSize: 16,
     color: "#64748b",
-  },
-  successText: {
-    marginBottom: 16,
-    textAlign: "center",
-    fontSize: 14,
-    color: colors.success,
   },
   errorText: {
     marginBottom: 16,

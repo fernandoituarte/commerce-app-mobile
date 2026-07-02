@@ -1,9 +1,205 @@
 {
+  "pos": {
+    "topBar": {
+      "account": "Account",
+      "org": "Organization"
+    },
+    "nav": {
+      "orders": "Orders",
+      "order": "Order",
+      "products": "Products"
+    },
+    "orders": {
+      "title": "Orders",
+      "newOrder": "New",
+      "empty": "No active orders",
+      "error": "Could not load orders",
+      "retry": "Retry",
+      "new": {
+        "title": "New Order",
+        "customerName": "Customer / Table",
+        "customerNamePlaceholder": "e.g. Table 4, John…",
+        "cancel": "Cancel",
+        "confirm": "Create Order"
+      },
+      "filter": {
+        "all": "All",
+        "pending": "Pending",
+        "preparing": "Preparing",
+        "ready": "Ready",
+        "delivered": "Delivered",
+        "cancelled": "Cancelled"
+      },
+      "status": {
+        "pending": "Pending",
+        "preparing": "Preparing",
+        "ready": "Ready",
+        "delivered": "Delivered",
+        "cancelled": "Cancelled"
+      },
+      "edit": {
+        "title": "Edit Order",
+        "confirm": "Save"
+      }
+    },
+    "detail": {
+      "noOrder": "Select an order",
+      "noItems": "No items yet",
+      "charge": "Charge",
+      "voidOrder": "Void Order",
+      "closeOrder": "Close Order",
+      "advancedPayment": "Payments",
+      "print": "Print",
+      "edit": "Edit",
+      "cancel": "Cancel",
+      "kitchen": "Kitchen",
+      "notes": "Notes",
+      "addNote": "Add a note…",
+      "subtotal": "Subtotal",
+      "tax": "Tax",
+      "total": "Total",
+      "items": "items",
+      "sections": {
+        "new": "New",
+        "preparing": "Preparing",
+        "ready": "Ready",
+        "served": "Served"
+      },
+      "item": {
+        "delete": {
+          "title": "Remove item?",
+          "message": "Remove {{name}} from this order?",
+          "confirm": "Remove",
+          "cancel": "Cancel"
+        },
+        "updateError": "Failed to update quantity",
+        "deleteError": "Failed to remove item"
+      },
+      "cancelledNotice": "This order has been cancelled and cannot be edited.",
+      "completeOrder": "Complete Order",
+      "payAndComplete": "Pay ${{amount}} & Complete",
+      "remaining": "Remaining",
+      "amountPaid": "Amount paid",
+      "paidInFull": "Paid in full",
+      "selectMethodHint": "Select a payment method above, or use the payment panel for split-bill.",
+      "close": {
+        "patchFailed": "Payment recorded — tap to retry closing the order",
+        "retry": "Retry close"
+      },
+      "kitchenError": "Failed to send to kitchen",
+      "itemStatus": {
+        "NEW": "New",
+        "SENT_TO_KITCHEN": "Sent",
+        "PREPARED": "Ready"
+      }
+    },
+    "void": {
+      "title": "Void Order",
+      "reasonLabel": "Select a reason",
+      "detailsLabel": "Additional details",
+      "detailsPlaceholder": "Describe the reason…",
+      "confirm": "Void Order",
+      "reasons": {
+        "customerRequest": "Customer request",
+        "kitchenError": "Kitchen error",
+        "outOfStock": "Out of stock",
+        "duplicate": "Duplicate order",
+        "other": "Other"
+      },
+      "errors": {
+        "reasonRequired": "Please select a reason",
+        "detailsRequired": "Details are required when reason is \"Other\"",
+        "failed": "Failed to void the order. Please try again."
+      }
+    },
+    "products": {
+      "search": "Search products…",
+      "unavailable": "Unavailable",
+      "all": "All",
+      "empty": "No products found",
+      "error": "Could not load products",
+      "retry": "Retry"
+    },
+    "addItem": {
+      "noOrder": {
+        "title": "No active order",
+        "message": "Create or select an order to add products."
+      },
+      "modal": {
+        "quantity": "Quantity",
+        "extras": "Add extras",
+        "ingredients": "Remove ingredients",
+        "confirm": "Add to order",
+        "confirmEdit": "Update item"
+      },
+      "error": "Failed to add item"
+    },
+    "payment": {
+      "title": "Payment",
+      "summary": "Order total",
+      "orderTotal": "Order total",
+      "enterAmount": "Enter amount",
+      "change": "Change",
+      "confirm": "Confirm payment",
+      "addPayment": "Add Payment",
+      "completeOrder": "Complete Order",
+      "split": "Split payment",
+      "method": "Payment method",
+      "paid": "Paid",
+      "remaining": "Remaining",
+      "paidInFull": "Paid in full",
+      "recordedPayments": "Recorded payments",
+      "exactAmount": "Exact",
+      "halfAmount": "Half",
+      "methods": {
+        "cash": "Cash",
+        "card": "Card",
+        "debit": "Debit",
+        "transfer": "Transfer"
+      },
+      "cancel": {
+        "title": "Cancel payment?",
+        "message": "Remove the ${{amount}} payment entry from this order?",
+        "confirm": "Cancel payment",
+        "dismiss": "Keep"
+      },
+      "errors": {
+        "addFailed": "Failed to record payment. Please try again.",
+        "cancelFailed": "Failed to cancel the payment. Please try again.",
+        "exceedsRemaining": "Amount cannot exceed the remaining balance of ${{remaining}}."
+      },
+      "failureReason": {
+        "ORDER_CANCELLED": "Order cancelled",
+        "STAFF_CANCEL": "Cancelled by staff",
+        "WRONG_AMOUNT": "Wrong amount",
+        "WRONG_PAYMENT_METHOD": "Wrong payment method",
+        "CUSTOMER_CANCELLED": "Customer cancelled",
+        "DUPLICATE_PAYMENT": "Duplicate payment",
+        "PAYMENT_FAILED": "Payment failed",
+        "CHECKOUT_SESSION_EXPIRED": "Session expired",
+        "PAYMENT_CANCELED": "Payment canceled"
+      }
+    }
+  },
+  "app": {
+    "name": "MyApp",
+    "settings": {
+      "title": "App Settings",
+      "language": "Language",
+      "languageModalDescription": "Our application uses the same language as your device. To change the language, please modify your device's language settings.",
+      "theme": "Theme",
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System Default",
+      "goToSettings": "Go to Settings"
+    }
+  },
   "common": {
     "email": "Email",
     "password": "Password",
     "emailPlaceholder": "you@example.com",
-    "passwordPlaceholder": "••••••••"
+    "passwordPlaceholder": "••••••••",
+    "ok": "OK"
   },
   "validation": {
     "emailRequired": "Email is required",
@@ -11,6 +207,7 @@
     "passwordRequired": "Password is required",
     "passwordMin6": "At least 6 characters",
     "passwordMin8": "At least 8 characters",
+    "passwordStrong": "Must include uppercase, lowercase, number and symbol",
     "nameRequired": "Name is required",
     "confirmPasswordRequired": "Please confirm your password",
     "passwordsMismatch": "Passwords do not match"
@@ -25,7 +222,18 @@
     "error": "Login failed. Please try again.",
     "orContinueWith": "or continue with",
     "googleButton": "Continue with Google",
-    "googleError": "Google sign-in failed. Please try again."
+    "googleError": "Google sign-in failed. Please try again.",
+    "deactivatedTitle": "Account deactivated",
+    "deactivatedMessage": "Your account has been deactivated. Would you like to reactivate it?",
+    "deactivatedConfirm": "Reactivate",
+    "notVerifiedMessage": "Please verify your email to continue."
+  },
+  "restore": {
+    "title": "Reactivate account",
+    "subtitle": "Enter your credentials to restore your deactivated account.",
+    "action": "Reactivate",
+    "backToSignIn": "Back to Sign In",
+    "error": "Failed to reactivate. Please check your credentials and try again."
   },
   "register": {
     "title": "Create account",
@@ -52,6 +260,10 @@
   "resetPassword": {
     "title": "Reset password",
     "subtitle": "Enter your new password below",
+    "codeLabel": "Verification code",
+    "codePlaceholder": "000000",
+    "invalidCode": "Please enter a valid 6-digit code.",
+    "rateLimitError": "Too many attempts. Please wait before trying again.",
     "newPassword": "New Password",
     "confirmNewPassword": "Confirm New Password",
     "resetPassword": "Reset Password",
@@ -59,7 +271,771 @@
     "success": "Password reset successfully!",
     "error": "Failed to reset password. Please try again."
   },
+  "verifyEmail": {
+    "title": "Verify your email",
+    "subtitle": "We sent a 6-digit code to {{email}}",
+    "codeLabel": "Verification code",
+    "codePlaceholder": "000000",
+    "verify": "Verify email",
+    "resend": "Resend code",
+    "resendIn": "Resend in {{seconds}}s",
+    "resendSuccess": "A new code has been sent.",
+    "invalidCode": "Please enter a valid 6-digit code.",
+    "error": "Invalid or expired code. Please try again.",
+    "rateLimitError": "Too many attempts. Please wait before trying again.",
+    "successTitle": "Email verified!",
+    "successMessage": "Your email has been verified. You can now sign in.",
+    "backToSignIn": "Back to Sign In"
+  },
   "home": {
     "welcome": "Welcome! You are logged in."
+  },
+  "currency": {
+    "usd": "$",
+    "eur": "€",
+    "gbp": "£",
+    "brl": "R$",
+    "ars": "$",
+    "uyu": "$U",
+    "mxn": "$",
+    "clp": "$",
+    "cop": "$",
+    "cad": "CA$",
+    "aud": "A$",
+    "jpy": "¥",
+    "cny": "¥",
+    "chf": "CHF",
+    "inr": "₹"
+  },
+  "user": {
+    "profile": {
+      "title": "Profile",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "memberSince": "Member since",
+      "accountStatus": "Account status",
+      "verified": "Verified",
+      "unverified": "Unverified",
+      "errorLoading": "Failed to load profile.",
+      "logoutAll": "Log out of all devices",
+      "logout": "Log Out",
+      "editProfile": "Edit Profile"
+    },
+    "account": {
+      "title": "Account Management",
+      "passwordModification": "Password Modification",
+      "deactivate": "Deactivate Account",
+      "delete": "Delete Account"
+    }
+  },
+  "subscription": {
+    "title": "Subscription",
+    "plan": "Plan",
+    "status": "Status",
+    "active": "Active",
+    "inactive": "Inactive",
+    "expiresOn": "Expires on",
+    "canceledAt": "Canceled at",
+    "renew": "Renew Subscription",
+    "gate": {
+      "title": "Subscription required",
+      "description": "You need an active subscription to use this app. Manage your plan on the web and tap \"Check again\" once activated.",
+      "manageButton": "Manage subscription",
+      "retryButton": "Check again",
+      "logout": "Log out"
+    },
+    "processing": {
+      "title": "Payment processing",
+      "description": "Your first payment is being confirmed. This usually takes a few minutes — tap \"Check again\" to refresh.",
+      "retryButton": "Check again"
+    },
+    "readonly": {
+      "banner": "View only — subscription is past due or paused.",
+      "manage": "Manage subscription"
+    }
+  },
+  "org": {
+    "bootstrap": {
+      "loading": "Loading your organization…"
+    },
+    "setup": {
+      "blockedTitle": "Organization setup unavailable",
+      "blockedDescription": "Your subscription is past due or paused. Renew it to create your organization."
+    },
+    "nav": {
+      "organization": "Organization",
+      "products": "Products",
+      "sales": "Sales",
+      "payments": "Payments",
+      "profile": "Profile",
+      "productsList": "Products",
+      "categories": "Categories",
+      "extras": "Extras",
+      "ingredients": "Ingredients",
+      "tags": "Tags",
+      "stock": "Stock",
+      "orders": "Orders",
+      "analytics": "Analytics",
+      "clients": "Clients",
+      "paymentMethods": "Payment Methods",
+      "backToPOS": "Back to POS"
+    },
+    "actions": {
+      "save": "Save changes",
+      "cancel": "Cancel",
+      "delete": "Delete",
+      "edit": "Edit",
+      "create": "Create",
+      "confirm": "Confirm",
+      "selectOrganization": "Select organization",
+      "createOrganization": "Create organization"
+    },
+    "profile": {
+      "title": "Organization",
+      "changeLogo": "Change logo",
+      "logoHint": "JPG or PNG, max 2MB",
+      "verified": "Verified",
+      "infoSection": "Organization info",
+      "name": "Organization name",
+      "address": "Address",
+      "contactEmail": "Contact email",
+      "contactPhone": "Contact phone",
+      "stripeSection": "Stripe account",
+      "stripeDescription": "Manage your payment processing account.",
+      "stripeConnected": "Connected",
+      "stripeManage": "Manage in Stripe",
+      "stripeNotConnected": "No Stripe account connected",
+      "stripeSetupIncomplete": "Setup incomplete",
+      "stripeConnect": "Connect with Stripe",
+      "stripeCompleteSetup": "Complete setup",
+      "stripeAccountId": "Account",
+      "stripeError": "Failed to connect Stripe. Please try again.",
+      "domainsSection": "Domains",
+      "domainsDescription": "Domains linked to your organization for client resolution.",
+      "domainAdd": "Add",
+      "domainAddPlaceholder": "e.g. myapp.com",
+      "domainEditTitle": "Edit domain",
+      "domainEditLabel": "Domain",
+      "domainDeleteTitle": "Delete domain?",
+      "domainDeleteDescription": "This action cannot be undone.",
+      "domainLastWarning": "You cannot delete the only domain",
+      "domainRequired": "Enter a domain",
+      "domainConflict": "This domain already exists"
+    },
+    "products": {
+      "title": "Products",
+      "search": "Search products…",
+      "create": "New product",
+      "edit": "Edit product",
+      "name": "Product name",
+      "description": "Description",
+      "price": "Price",
+      "stock": "Stock",
+      "availability": "Availability",
+      "available": "Available",
+      "unavailable": "Unavailable",
+      "inactive": "Inactive",
+      "outOfStock": "Out of stock",
+      "image": "Image",
+      "imageHint": "JPG, JPEG, PNG or WEBP, max 5 MB",
+      "addImage": "Add image",
+      "changeImage": "Change image",
+      "imageSizeError": "Image exceeds the 5 MB limit",
+      "imageFormatError": "Invalid format. Use JPG, JPEG, PNG or WEBP",
+      "imageUploadError": "Upload failed. Try again.",
+      "category": "Category",
+      "selectCategory": "Select a category",
+      "noCategory": "No category",
+      "tags": "Tags",
+      "addTag": "Add tag",
+      "extras": "Extras",
+      "addExtra": "Add extra",
+      "ingredients": "Ingredients",
+      "addIngredient": "Add ingredient",
+      "quantity": "Qty",
+      "appearance": "Appearance",
+      "backgroundColor": "Background color",
+      "textColor": "Text color",
+      "badge": "Badge label",
+      "badgePlaceholder": "e.g. New, Popular",
+      "highlight": "Highlight",
+      "highlightHint": "Feature this product in the POS",
+      "sortOrder": "Sort order",
+      "preview": "Preview",
+      "showDeleted": "Show deleted",
+      "trackStock": "Track stock",
+      "trackStockHint": "Monitor and manage stock levels for this product",
+      "reservedStock": "Reserved stock",
+      "lowStockThreshold": "Low stock threshold",
+      "lowStockThresholdHint": "A low-stock alert will trigger when stock drops below this value",
+      "active": "Active",
+      "empty": "No products",
+      "emptyDescription": "Create your first product to get started.",
+      "restore": "Restore",
+      "deleteTitle": "Delete product?",
+      "deleteDescription": "\"{{name}}\" will be soft-deleted. You can restore it later.",
+      "restoreTitle": "Restore product?",
+      "restoreDescription": "\"{{name}}\" will be made available again.",
+      "done": "Done",
+      "categories": {
+        "all": "All",
+        "Food": "Food",
+        "Drinks": "Drinks",
+        "Desserts": "Desserts"
+      }
+    },
+    "extras": {
+      "title": "Extras",
+      "search": "Search extras…",
+      "create": "New extra",
+      "edit": "Edit extra",
+      "name": "Extra name",
+      "description": "Description",
+      "price": "Price",
+      "showDeleted": "Show deleted",
+      "active": "Active",
+      "inactive": "Inactive",
+      "empty": "No extras",
+      "emptyDescription": "Create your first extra to offer add-ons on your products.",
+      "restore": "Restore",
+      "deleteTitle": "Delete extra?",
+      "deleteDescription": "\"{{name}}\" will be soft-deleted. You can restore it later.",
+      "restoreTitle": "Restore extra?",
+      "restoreDescription": "\"{{name}}\" will be made available again."
+    },
+    "ingredients": {
+      "title": "Ingredients",
+      "search": "Search ingredients…",
+      "create": "New ingredient",
+      "edit": "Edit ingredient",
+      "name": "Ingredient name",
+      "description": "Description",
+      "showDeleted": "Show deleted",
+      "active": "Active",
+      "inactive": "Inactive",
+      "empty": "No ingredients",
+      "emptyDescription": "Create your first ingredient to track your inventory.",
+      "restore": "Restore",
+      "deleteTitle": "Delete ingredient?",
+      "deleteDescription": "\"{{name}}\" will be soft-deleted. You can restore it later.",
+      "restoreTitle": "Restore ingredient?",
+      "restoreDescription": "\"{{name}}\" will be made available again."
+    },
+    "categories": {
+      "title": "Categories",
+      "search": "Search categories…",
+      "create": "New category",
+      "edit": "Edit category",
+      "name": "Category name",
+      "description": "Description",
+      "backgroundColor": "Background color",
+      "textColor": "Text color",
+      "badge": "Badge label",
+      "badgePlaceholder": "e.g. New, Popular",
+      "highlight": "Highlight",
+      "highlightHint": "Feature this category in the POS",
+      "sortOrder": "Sort order",
+      "preview": "Preview",
+      "previewPlaceholder": "Category name",
+      "showDeleted": "Show deleted",
+      "active": "Active",
+      "inactive": "Inactive",
+      "empty": "No categories",
+      "emptyDescription": "Create your first category to organize your products.",
+      "restore": "Restore",
+      "deleteTitle": "Delete category?",
+      "deleteDescription": "\"{{name}}\" will be soft-deleted. You can restore it later.",
+      "restoreTitle": "Restore category?",
+      "restoreDescription": "\"{{name}}\" will be made available again."
+    },
+    "tags": {
+      "title": "Tags",
+      "search": "Search tags…",
+      "create": "New tag",
+      "edit": "Edit tag",
+      "name": "Tag name",
+      "description": "Description",
+      "color": "Color",
+      "backgroundColor": "Background color",
+      "textColor": "Text color",
+      "badge": "Badge label",
+      "badgePlaceholder": "e.g. Vegetarian, Spicy",
+      "highlight": "Highlight",
+      "highlightHint": "Feature this tag in the POS",
+      "sortOrder": "Sort order",
+      "preview": "Preview",
+      "showDeleted": "Show deleted",
+      "active": "Active",
+      "inactive": "Inactive",
+      "productsCount": "{{count}} products",
+      "empty": "No tags",
+      "emptyDescription": "Create your first tag to label your products.",
+      "restore": "Restore",
+      "deleteTitle": "Delete tag?",
+      "deleteDescription": "\"{{name}}\" will be soft-deleted. You can restore it later.",
+      "restoreTitle": "Restore tag?",
+      "restoreDescription": "\"{{name}}\" will be made available again."
+    },
+    "stock": {
+      "title": "Stock",
+      "search": "Search inventory…",
+      "lowStockAlert": "{{count}} items low on stock",
+      "low": "Low",
+      "ok": "OK",
+      "minLabel": "Min",
+      "history": "Stock history",
+      "product": "Product",
+      "current": "Current",
+      "reserved": "Reserved",
+      "minimum": "Min",
+      "unit": "Unit",
+      "status": "Status"
+    },
+    "payment": {
+      "title": "Payment Methods",
+      "description": "Enable the payment methods accepted at your organization.",
+      "builtIn": "Standard methods",
+      "custom": "Custom methods",
+      "enabled": "Enabled",
+      "disabled": "Disabled",
+      "noCustom": "No custom methods yet.\nTap + to add one.",
+      "dragHint": "Long-press a method to drag and reorder.",
+      "createTitle": "New payment method",
+      "methodName": "Method name",
+      "iconHint": "The icon will be set automatically.",
+      "search": "Search payment methods…",
+      "showDeleted": "Show deleted",
+      "create": "New method",
+      "edit": "Edit method",
+      "name": "Name",
+      "fieldDescription": "Description",
+      "descriptionPlaceholder": "Optional",
+      "isActive": "Active",
+      "isActiveHint": "Show this method at checkout",
+      "isDefault": "Default",
+      "isDefaultHint": "Pre-select this method at checkout",
+      "sortOrder": "Sort order",
+      "active": "Active",
+      "inactive": "Inactive",
+      "default": "Default",
+      "system": "System",
+      "empty": "No payment methods",
+      "emptyDescription": "Create your first payment method to get started.",
+      "restore": "Restore",
+      "deleteTitle": "Delete payment method?",
+      "deleteDescription": "\"{{name}}\" will be soft-deleted. You can restore it later.",
+      "restoreTitle": "Restore payment method?",
+      "restoreDescription": "\"{{name}}\" will be made available again.",
+      "systemDeleteHint": "System methods cannot be deleted"
+    },
+    "orders": {
+      "title": "Orders",
+      "search": "Search by customer or order #…",
+      "items": "items",
+      "empty": "No orders yet",
+      "emptyDescription": "Create your first order",
+      "withDeleted": "Show deleted",
+      "create": "New order",
+      "customerName": "Customer name",
+      "customerNamePlaceholder": "Optional",
+      "product": "Product",
+      "productPlaceholder": "Search product…",
+      "quantity": "Quantity",
+      "extras": "Extras",
+      "removedIngredients": "Remove ingredients",
+      "addItem": "Add item",
+      "removeItem": "Remove",
+      "subtotal": "Subtotal",
+      "total": "Total",
+      "minOneItem": "Add at least one item",
+      "status": {
+        "all": "All",
+        "pending": "Pending",
+        "preparing": "Preparing",
+        "ready": "Ready",
+        "delivered": "Delivered",
+        "cancelled": "Cancelled",
+        "PENDING": "Pending",
+        "IN_PROGRESS": "In Progress",
+        "READY": "Ready",
+        "COMPLETED": "Completed",
+        "CANCELLED": "Cancelled",
+        "REOPENED": "Reopened"
+      },
+      "paymentStatus": {
+        "PENDING": "Pending",
+        "PROCESSING": "Processing",
+        "COMPLETED": "Completed",
+        "PAID": "Paid",
+        "FAILED": "Failed",
+        "REFUNDED": "Refunded",
+        "EXPIRED": "Expired",
+        "CANCELED": "Canceled"
+      },
+      "cols": {
+        "number": "Order",
+        "customer": "Customer",
+        "items": "Items",
+        "total": "Total",
+        "status": "Status",
+        "payment": "Payment",
+        "date": "Date",
+        "time": "Time"
+      },
+      "detail": {
+        "updateStatus": "Update status",
+        "items": "Items",
+        "summary": "Summary",
+        "currency": "Currency",
+        "extras": "Extras",
+        "removedIngredients": "Removed ingredients",
+        "noItems": "No items"
+      },
+      "updateStatus": {
+        "title": "Update order status",
+        "label": "New status",
+        "confirm": "Confirm"
+      }
+    },
+    "analytics": {
+      "title": "Analytics",
+      "revenue": "Total revenue",
+      "orders": "orders",
+      "avgOrder": "Avg. order",
+      "newClients": "New clients",
+      "vsLastMonth": "vs last month",
+      "revenueChart": "Revenue",
+      "ordersChart": "Orders",
+      "last7days": "Last 7 days",
+      "topProducts": "Top products"
+    },
+    "clients": {
+      "title": "Clients",
+      "search": "Search clients…",
+      "all": "All",
+      "gold": "Gold",
+      "silver": "Silver",
+      "bronze": "Bronze",
+      "orders": "Orders",
+      "spent": "Total spent",
+      "lastOrder": "Last order",
+      "loyaltyProgress": "Loyalty progress",
+      "ordersToNextLevel": "orders to next level",
+      "contact": "Contact",
+      "viewOrders": "View orders",
+      "name": "Name",
+      "email": "Email",
+      "createdAt": "Created",
+      "active": "Active",
+      "inactive": "Inactive",
+      "showDeleted": "Show deleted",
+      "edit": "Edit customer",
+      "namePlaceholder": "Customer name",
+      "create": "New customer",
+      "empty": "No customers",
+      "emptyDescription": "No customers have been registered yet.",
+      "deleteTitle": "Deactivate customer?",
+      "deleteDescription": "\"{{name}}\" will be deactivated. You can restore them later.",
+      "restoreTitle": "Restore customer?",
+      "restoreDescription": "\"{{name}}\" will be reactivated.",
+      "restore": "Restore",
+      "permanentDeleteTitle": "Delete permanently?",
+      "permanentDeleteDescription": "This action is permanent and cannot be undone. All data for {{name}} will be lost.",
+      "permanentDelete": "Delete permanently",
+      "pauseTitle": "Pause account?",
+      "pauseDescription": "This will temporarily disable {{name}}'s account.",
+      "pause": "Pause account",
+      "paused": "Paused",
+      "deleted": "Deleted",
+      "permDeletedTooltip": "This account has been permanently deleted",
+      "restoreAccountTitle": "Restore account?",
+      "restoreAccountDescription": "This will reactivate the customer's account.",
+      "restoreAccount": "Restore account",
+      "cannotDelete": "Cannot delete",
+      "pauseFirst": "Pause the account before deleting it permanently"
+    },
+    "paymentsPage": {
+      "title": "Payments",
+      "search": "Search payments…",
+      "create": "New payment",
+      "empty": "No payments",
+      "emptyDescription": "No payments have been recorded yet.",
+      "status": {
+        "all": "All",
+        "PENDING": "Pending",
+        "PROCESSING": "Processing",
+        "COMPLETED": "Completed",
+        "PAID": "Paid",
+        "FAILED": "Failed",
+        "REFUNDED": "Refunded",
+        "EXPIRED": "Expired",
+        "CANCELLED": "Canceled"
+      },
+      "cancelTitle": "Cancel payment",
+      "cancelWarning": "This action will cancel the payment. It cannot be undone.",
+      "cancelReasonLabel": "Reason",
+      "cancelConfirm": "Cancel payment",
+      "failureReason": {
+        "WRONG_AMOUNT": "Wrong amount",
+        "WRONG_PAYMENT_METHOD": "Wrong payment method",
+        "CUSTOMER_CANCELLED": "Customer cancelled",
+        "DUPLICATE_PAYMENT": "Duplicate payment",
+        "OTHER": "Other"
+      },
+      "form": {
+        "orderId": "Order ID",
+        "amount": "Amount",
+        "amountPlaceholder": "e.g. 15.50",
+        "currency": "Currency",
+        "paymentMethod": "Payment method",
+        "noMethods": "No payment methods available",
+        "errorRequired": "Please fill in all required fields."
+      }
+    }
+  },
+  "account": {
+    "actions": {
+      "save": "Save changes",
+      "cancel": "Cancel",
+      "confirm": "Confirm"
+    },
+    "sections": {
+      "account": "Account",
+      "subscription": "Subscription",
+      "sessions": "Sessions & security"
+    },
+    "profile": {
+      "title": "Profile",
+      "memberSince": "Member since",
+      "editProfile": "Edit profile"
+    },
+    "profileUpdate": {
+      "title": "Edit profile",
+      "changePhoto": "Change photo",
+      "name": "Full name",
+      "namePlaceholder": "Your name",
+      "phone": "Phone",
+      "phonePlaceholder": {
+        "default": "+598 9123 4567",
+        "en": "+1 555 123 4567",
+        "es": "+34 612 34 56 78",
+        "fr": "+33 6 12 34 56 78",
+        "uy": "+598 9123 4567",
+        "ar": "+54 9 11 1234 5678"
+      },
+      "success": "Profile updated successfully.",
+      "error": "Failed to update profile. Please try again."
+    },
+    "email": {
+      "title": "Email address",
+      "description": "Update the email used to sign in and receive notifications.",
+      "currentLabel": "Current email",
+      "newLabel": "New email",
+      "newPlaceholder": "newemail@example.com",
+      "passwordLabel": "Confirm with password",
+      "passwordPlaceholder": "••••••••",
+      "action": "Update email",
+      "helper": "We'll send a verification link to your new address.",
+      "noEmail": "No email on file",
+      "success": "Email updated. Check your inbox to verify your new address.",
+      "error": "Failed to update email. Please try again.",
+      "confirmTitle": "Verify new email",
+      "confirmDescription": "Enter the 6-digit code sent to your new email address.",
+      "codeLabel": "Verification code",
+      "codePlaceholder": "000000",
+      "confirmAction": "Verify",
+      "confirmSuccess": "Your email has been updated.",
+      "codeInvalid": "Please enter a valid 6-digit code."
+    },
+    "password": {
+      "title": "Password",
+      "subtitle": "Change your sign-in password",
+      "description": "For your security, choose a password you haven't used before.",
+      "current": "Current password",
+      "currentRequired": "Current password is required",
+      "new": "New password",
+      "newRequired": "New password is required",
+      "confirm": "Confirm new password",
+      "action": "Change password",
+      "tip1": "Use at least 8 characters",
+      "tip2": "Mix letters, numbers and symbols",
+      "tip3": "Avoid reusing passwords from other sites",
+      "mismatch": "New passwords do not match.",
+      "success": "Password changed successfully.",
+      "error": "Failed to change password. Please try again."
+    },
+    "theme": {
+      "title": "Appearance",
+      "description": "Choose how the app should look. Follows your system by default.",
+      "preview": "Preview",
+      "previewSample": "The quick brown fox",
+      "previewBody": "Tap an option above to preview how text, surfaces and accents adapt.",
+      "options": {
+        "system": "System",
+        "light": "Light",
+        "dark": "Dark"
+      },
+      "subtitles": {
+        "system": "Match device setting",
+        "light": "Always use a light theme",
+        "dark": "Always use a dark theme"
+      }
+    },
+    "subscription": {
+      "current": "Current plan",
+      "history": "Billing history",
+      "upgrade": "Upgrade plan"
+    },
+    "subscriptionCreate": {
+      "title": "Choose a plan",
+      "subtitle": "Cancel anytime. Switch plans whenever you need.",
+      "perMonth": "/ month",
+      "perYear": "/ year",
+      "popular": "Most popular",
+      "action": "Continue",
+      "terms": "By continuing you agree to our Terms and Privacy Policy.",
+      "errorTitle": "Something went wrong",
+      "errorDescription": "Failed to start checkout. Please try again.",
+      "plansErrorTitle": "Plans unavailable",
+      "plansErrorDescription": "Could not load available plans.",
+      "retry": "Try again",
+      "plans": {
+        "basic": {
+          "name": "Basic",
+          "features": {
+            "0": "Up to 3 projects",
+            "1": "Community support",
+            "2": "Basic analytics"
+          }
+        },
+        "pro": {
+          "name": "Pro",
+          "features": {
+            "0": "Unlimited projects",
+            "1": "Priority support",
+            "2": "Advanced analytics",
+            "3": "Custom domains",
+            "4": "API access"
+          }
+        }
+      }
+    },
+    "subscriptionCurrent": {
+      "title": "Your subscription",
+      "activePlan": "Current plan",
+      "status": {
+        "active": "Active",
+        "trial": "Trialing",
+        "processing": "Processing",
+        "past_due": "Past due",
+        "canceled": "Canceled",
+        "expired": "Expired",
+        "incomplete": "Incomplete",
+        "paused": "Paused"
+      },
+      "renewsOn": "Renews on {{date}}",
+      "cancelsOn": "Cancels on {{date}}",
+      "processingHint": "Your subscription is activating. This may take a few moments.",
+      "processingTitle": "Checkout not complete",
+      "processingDescription": "Your checkout wasn't finished. Continue to complete your subscription.",
+      "continueSubscription": "Complete subscription",
+      "alreadyPaidHint": "If you already paid, activation may take a few seconds.",
+      "refresh": "Refresh",
+      "billing": "Billing",
+      "paymentMethod": "Payment method",
+      "changePlan": "Change plan",
+      "changePlanTitle": "Change plan",
+      "changePlanDescription": "Switch to the {{plan}} plan?",
+      "changePlanConfirm": "Switch plan",
+      "cancel": "Cancel subscription",
+      "cancelConfirmTitle": "Cancel subscription?",
+      "cancelConfirmDescription": "You will keep access until the end of the current billing period.",
+      "reactivate": "Reactivate subscription",
+      "changePlanUpgradeHint": "Upgrades apply immediately.",
+      "changePlanDowngradeHint": "Downgrades take effect at the end of your current billing period.",
+      "noSubscription": "No active subscription",
+      "noSubscriptionDescription": "Subscribe to unlock premium features.",
+      "noSubscriptionAction": "See plans",
+      "subscribe": "Subscribe"
+    },
+    "subscriptionHistory": {
+      "title": "Billing history",
+      "totalInvoices": "Invoices",
+      "amount": "Amount",
+      "paid": "Paid",
+      "invoices": "Invoices",
+      "empty": "No billing history",
+      "emptyDescription": "Your billing history will appear here.",
+      "viewInvoice": "View invoice",
+      "downloadPdf": "Download PDF",
+      "status": {
+        "paid": "Paid",
+        "open": "Open",
+        "draft": "Draft",
+        "void": "Void",
+        "uncollectible": "Uncollectible",
+        "unknown": "Unknown"
+      }
+    },
+    "logout": {
+      "title": "Log out",
+      "description": "You will be logged out of your account.",
+      "action": "Log out",
+      "confirmTitle": "Log out?",
+      "confirmDescription": "You can sign back in at any time to continue using your account."
+    },
+    "logoutAll": {
+      "title": "Log out everywhere",
+      "description": "End every session signed in to your account. You'll need to sign in again on each device.",
+      "devicesLabel": "Active devices",
+      "action": "Log out of all devices",
+      "confirmTitle": "Log out of all devices?",
+      "confirmDescription": "Every device currently signed in will be signed out immediately.",
+      "current": "This device",
+      "revokeLabel": "Revoke",
+      "revokeConfirmTitle": "Revoke this session?",
+      "revokeConfirmDescription": "That device will be signed out immediately.",
+      "errorTitle": "Could not load sessions",
+      "errorDescription": "Check your connection and try again.",
+      "retry": "Try again",
+      "refresh": "Refresh sessions"
+    },
+    "dangerZone": {
+      "title": "Danger zone",
+      "description": "These actions can't be easily undone. Please proceed with care."
+    },
+    "deactivate": {
+      "title": "Deactivate account",
+      "heading": "Take a break",
+      "description": "Hide your profile and pause all activity. You can reactivate anytime by signing back in.",
+      "bullets": {
+        "0": "Your profile is hidden from others",
+        "1": "Your data and settings are preserved",
+        "2": "Reactivation is instant on next sign-in"
+      },
+      "dangerTitle": "Deactivate now",
+      "dangerDescription": "You will be signed out across every device.",
+      "action": "Deactivate account",
+      "confirmTitle": "Deactivate account?",
+      "confirmDescription": "You can reactivate at any time by signing in again.",
+      "error": "Failed to deactivate account. Please try again.",
+      "confirmHint": "Type \"deactivate\" to enable the button.",
+      "confirmLabel": "Confirmation",
+      "confirmError": "Please type \"deactivate\" to continue."
+    },
+    "delete": {
+      "title": "Delete account",
+      "heading": "This is permanent",
+      "description": "Deleting your account removes your profile, content and subscription. This cannot be undone.",
+      "confirmHelper": "Type {{word}} to confirm.",
+      "dangerTitle": "Delete forever",
+      "dangerDescription": "All data tied to your account will be erased within 30 days.",
+      "action": "Delete account",
+      "confirmTitle": "Delete account permanently?",
+      "confirmDescription": "This action cannot be undone. Your account and all data will be removed.",
+      "mismatch": "Type DELETE to confirm.",
+      "error": "Failed to delete account. Please try again."
+    }
   }
 }

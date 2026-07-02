@@ -29,7 +29,11 @@ export function RegisterScreen() {
   const password = watch("password");
 
   const onSubmit = ({ confirmPassword, ...data }: RegisterForm) => {
-    registerMutation.mutate(data);
+    registerMutation.mutate(data, {
+      onSuccess: () => {
+        router.push({ pathname: "/verify-email", params: { email: data.email } });
+      },
+    });
   };
 
   return (
@@ -95,6 +99,9 @@ export function RegisterScreen() {
           rules={{
             required: t("validation.passwordRequired"),
             minLength: { value: 8, message: t("validation.passwordMin8") },
+            validate: (value) =>
+              /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z\d]).{8,}$/.test(value) ||
+              t("validation.passwordStrong"),
           }}
           render={({ field: { onChange, onBlur, value } }) => (
             <Input
@@ -132,8 +139,7 @@ export function RegisterScreen() {
         {/* ── Error Message ──────────────────────────── */}
         {registerMutation.isError && (
           <Text style={styles.errorText}>
-            {(registerMutation.error as { message?: string })?.message ??
-              t("register.error")}
+            {registerMutation.error?.message ?? t("register.error")}
           </Text>
         )}
 

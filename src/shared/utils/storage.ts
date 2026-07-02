@@ -1,9 +1,11 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import * as SecureStore from "expo-secure-store";
+import { logger } from "../../core/config/logger";
 
 const KEYS = {
   ACCESS_TOKEN: "access_token",
   REFRESH_TOKEN: "refresh_token",
+  THEME_MODE: "theme_mode",
 } as const;
 
 export const storage = {
@@ -30,6 +32,7 @@ export const storage = {
       SecureStore.setItemAsync(KEYS.ACCESS_TOKEN, accessToken),
       SecureStore.setItemAsync(KEYS.REFRESH_TOKEN, refreshToken),
     ]);
+    logger.log("STORAGE", "Tokens saved to secure storage");
   },
 
   async clearTokens(): Promise<void> {
@@ -37,6 +40,30 @@ export const storage = {
       SecureStore.deleteItemAsync(KEYS.ACCESS_TOKEN),
       SecureStore.deleteItemAsync(KEYS.REFRESH_TOKEN),
     ]);
+    logger.log("STORAGE", "Tokens cleared from secure storage");
+  },
+
+  // ─── Organization (AsyncStorage) ─────────────────────────────────────
+
+  async getCurrentOrganizationId(userId: string): Promise<string | null> {
+    return AsyncStorage.getItem(`user:${userId}:current_org`);
+  },
+
+  async setOrganizationId(
+    userId: string,
+    organizationId: string,
+  ): Promise<void> {
+    await AsyncStorage.setItem(`user:${userId}:current_org`, organizationId);
+  },
+
+  // ─── Theme (AsyncStorage) ────────────────────────────────────────
+
+  async getThemeMode(): Promise<string | null> {
+    return AsyncStorage.getItem(KEYS.THEME_MODE);
+  },
+
+  async setThemeMode(mode: string): Promise<void> {
+    await AsyncStorage.setItem(KEYS.THEME_MODE, mode);
   },
 
   // ─── Generic Storage (AsyncStorage – non-critical data) ─────────
@@ -52,7 +79,8 @@ export const storage = {
   },
 
   async set(key: string, value: unknown): Promise<void> {
-    const serialized = typeof value === "string" ? value : JSON.stringify(value);
+    const serialized =
+      typeof value === "string" ? value : JSON.stringify(value);
     await AsyncStorage.setItem(key, serialized);
   },
 

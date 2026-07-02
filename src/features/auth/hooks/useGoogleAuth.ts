@@ -5,7 +5,8 @@ import { authService } from "../api/auth.service";
 import { storage } from "../../../shared/utils/storage";
 import { useAppDispatch } from "../../../core/store/hooks";
 import { setCredentials } from "../store/authSlice";
-import { env } from "../../../core/env";
+import { env } from "../../../core/config/env";
+import { logger } from "../../../core/config/logger";
 import type { AuthResponse, GoogleAuthRequest } from "../types";
 
 // ─── Lazy-load native module ──────────────────────────────────────
@@ -25,6 +26,7 @@ try {
   statusCodes = mod.statusCodes;
 } catch {
   // Native module not available (Expo Go).
+  logger.warn("AUTH", "Google Sign-In native module not available (Expo Go)");
 }
 
 const isNativeAvailable = GoogleSignin !== null;
@@ -61,6 +63,7 @@ export function useGoogleAuth(organizationId?: string) {
   // ── Trigger Google sign-in ────────────────────────────────────
   const signInWithGoogle = useCallback(async () => {
     if (!GoogleSignin || !isSuccessResponse || !isErrorWithCode || !statusCodes) {
+      logger.warn("AUTH", "Google Sign-In unavailable, showing alert");
       Alert.alert(
         "Development Build Required",
         "Google Sign-In is not available in Expo Go. Please use a development build.",
@@ -70,19 +73,21 @@ export function useGoogleAuth(organizationId?: string) {
 
     try {
       await GoogleSignin.hasPlayServices();
+      logger.log("AUTH", "Google Sign-In prompt opened");
       const response = await GoogleSignin.signIn();
 
       if (!isSuccessResponse(response)) return;
 
       const idToken = response.data.idToken;
       if (idToken) {
+        logger.log("AUTH", "Google idToken received, sending to backend");
         mutation.mutate({ idToken, organizationId });
       }
     } catch (error) {
       if (isErrorWithCode(error)) {
         switch (error.code) {
           case statusCodes.SIGN_IN_CANCELLED:
-            // User cancelled – no action needed.
+            logger.log("AUTH", "Google Sign-In cancelled by user");
             break;
           case statusCodes.IN_PROGRESS:
             break;

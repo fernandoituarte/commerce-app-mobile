@@ -16,7 +16,10 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.fernandoituartespr.commerceapp"
+      "bundleIdentifier": "com.fernandoituartespr.commerceapp",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -34,7 +37,14 @@
     "plugins": [
       "expo-secure-store",
       "expo-router",
-      "@react-native-google-signin/google-signin"
-    ]
+      "@react-native-google-signin/google-signin",
+      "expo-web-browser"
+    ],
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "99b5e3c6-d881-45a2-a535-4ef424568ecb"
+      }
+    }
   }
 }

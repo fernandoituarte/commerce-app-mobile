@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useState, useRef, useMemo } from "react";
 import { View, Text, KeyboardAvoidingView, Platform, ScrollView, StyleSheet } from "react-native";
 import { useForm, Controller } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
 import { useRouter } from "expo-router";
 import { useTranslation } from "react-i18next";
 import { useLogin } from "../hooks/useAuth";
 import { useGoogleAuth } from "../hooks/useGoogleAuth";
 import { Button, Input } from "../../../shared/components";
+import { ConfirmDialog } from "@/shared/components/ui";
 import { colors } from "../../../core/theme";
+import { logger } from "../../../core/config/logger";
+import { AUTH_ERROR_CODES } from "../api/auth-error-codes";
+import { setRestoreIntent } from "../restore-intent";
 import type { LoginRequest } from "../types";
 
 export function LoginScreen() {
@@ -15,17 +21,52 @@ export function LoginScreen() {
   const loginMutation = useLogin();
   const { signInWithGoogle, isLoading: googleLoading, isError: googleError, error: googleAuthError } = useGoogleAuth();
 
+  const [showDeactivatedDialog, setShowDeactivatedDialog] = useState(false);
+  const pendingCredentials = useRef<LoginRequest | null>(null);
+
+  const schema = useMemo(
+    () =>
+      z.object({
+        email: z
+          .string()
+          .min(1, t("validation.emailRequired"))
+          .email(t("validation.emailInvalid")),
+        password: z.string().min(1, t("validation.passwordRequired")),
+      }),
+    [t],
+  );
+
   const {
     control,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm<LoginRequest>({
+    resolver: zodResolver(schema),
     defaultValues: { email: "", password: "" },
+    mode: "onChange",
   });
 
   const onSubmit = (data: LoginRequest) => {
-    loginMutation.mutate(data);
+    logger.log("AUTH", "Login button pressed");
+    loginMutation.mutate(data, {
+      onError: (error) => {
+        if (error.code === AUTH_ERROR_CODES.ACCOUNT_DEACTIVATED) {
+          pendingCredentials.current = data;
+          setShowDeactivatedDialog(true);
+        } else if (error.code === AUTH_ERROR_CODES.EMAIL_NOT_VERIFIED) {
+          router.push({ pathname: "/verify-email", params: { email: data.email } });
+        }
+      },
+    });
   };
+
+  const isDeactivatedError =
+    loginMutation.isError &&
+    loginMutation.error?.code === AUTH_ERROR_CODES.ACCOUNT_DEACTIVATED;
+
+  const isUnverifiedError =
+    loginMutation.isError &&
+    loginMutation.error?.code === AUTH_ERROR_CODES.EMAIL_NOT_VERIFIED;
 
   return (
     <KeyboardAvoidingView
@@ -46,13 +87,6 @@ export function LoginScreen() {
         <Controller
           control={control}
           name="email"
-          rules={{
-            required: t("validation.emailRequired"),
-            pattern: {
-              value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-              message: t("validation.emailInvalid"),
-            },
-          }}
           render={({ field: { onChange, onBlur, value } }) => (
             <Input
               label={t("common.email")}
@@ -70,10 +104,6 @@ export function LoginScreen() {
         <Controller
           control={control}
           name="password"
-          rules={{
-            required: t("validation.passwordRequired"),
-            minLength: { value: 6, message: t("validation.passwordMin6") },
-          }}
           render={({ field: { onChange, onBlur, value } }) => (
             <Input
               label={t("common.password")}
@@ -95,11 +125,12 @@ export function LoginScreen() {
           {t("login.forgotPassword")}
         </Text>
 
-        {/* ── Error Message ──────────────────────────── */}
-        {loginMutation.isError && (
+        {/* ── Error Message ───────────────────────────────────── */}
+        {loginMutation.isError && !isDeactivatedError && (
           <Text style={styles.errorText}>
-            {(loginMutation.error as { message?: string })?.message ??
-              t("login.error")}
+            {isUnverifiedError
+              ? t("login.notVerifiedMessage")
+              : (loginMutation.error?.message ?? t("login.error"))}
           </Text>
         )}
 
@@ -107,6 +138,7 @@ export function LoginScreen() {
         <Button
           title={t("login.signIn")}
           loading={loginMutation.isPending}
+          disabled={!isValid || loginMutation.isPending}
           onPress={handleSubmit(onSubmit)}
         />
 
@@ -144,6 +176,30 @@ export function LoginScreen() {
           </Text>
         </View>
       </ScrollView>
+
+      {/* ── Deactivated Account Dialog ─────────────── */}
+      <ConfirmDialog
+        open={showDeactivatedDialog}
+        onOpenChange={(open) => {
+          if (!open) {
+            pendingCredentials.current = null;
+            loginMutation.reset();
+          }
+          setShowDeactivatedDialog(open);
+        }}
+        title={t("login.deactivatedTitle")}
+        description={t("login.deactivatedMessage")}
+        confirmLabel={t("login.deactivatedConfirm")}
+        cancelLabel={t("account.actions.cancel")}
+        onConfirm={() => {
+          if (pendingCredentials.current) {
+            setRestoreIntent(pendingCredentials.current);
+          }
+          pendingCredentials.current = null;
+          setShowDeactivatedDialog(false);
+          router.push("/restore");
+        }}
+      />
     </KeyboardAvoidingView>
   );
 }

@@ -14,7 +14,7 @@ const initialState: AuthState = {
   user: null,
   tokens: null,
   isAuthenticated: false,
-  isLoading: false, // set to true when implementing persisted token check on startup
+  isLoading: true,
 };
 
 // ─── Slice ────────────────────────────────────────────────────────
@@ -23,6 +23,9 @@ const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
+    resetAuthState() {
+      return initialState;
+    },
     setCredentials(
       state,
       action: PayloadAction<{ user: User; tokens: AuthTokens }>,
@@ -44,9 +47,14 @@ const authSlice = createSlice({
     setLoading(state, action: PayloadAction<boolean>) {
       state.isLoading = action.payload;
     },
+    restoreSession(state, action: PayloadAction<AuthTokens>) {
+      state.tokens = action.payload;
+      state.isAuthenticated = true;
+      state.isLoading = false;
+    },
   },
 });
 
-export const { setCredentials, setUser, logout, setLoading } =
+export const { setCredentials, setUser, logout, setLoading, restoreSession, resetAuthState } =
   authSlice.actions;
 export default authSlice.reducer;

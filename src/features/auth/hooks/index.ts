@@ -1,2 +1,2 @@
-export { useLogin, useRegister, useForgotPassword, useResetPassword, useLogout } from "./useAuth";
+export { useLogin, useRegister, useForgotPassword, useResetPassword } from "./useAuth";
 export { useGoogleAuth } from "./useGoogleAuth";
